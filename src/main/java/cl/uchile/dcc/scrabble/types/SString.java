@@ -12,8 +12,10 @@ public class SString extends abstractTypes{
         this.value = value;
     }
 
-    /*
-    TODO
+    /* TODO
+    Receives an ITypes object and summons it's addToString method. It
+    uses this SString object as an input. It returns the concatanation of
+    it's value and it's toString() representation
      */
     public SString add(ITypes addend) {
         return addend.addToString(this);

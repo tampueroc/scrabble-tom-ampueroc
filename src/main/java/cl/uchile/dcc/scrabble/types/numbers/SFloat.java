@@ -2,15 +2,18 @@ package cl.uchile.dcc.scrabble.types.numbers;
 
 import cl.uchile.dcc.scrabble.types.SString;
 
-
 public class SFloat implements INumbers{
     protected double value;
 
+    /*
+    Creates a SFloat object
+     */
     public SFloat(double value) {
         this.value = value;
     }
-
     // region : Cast
+
+    // TODO
     @Override
     public SString asString() {
         return new SString(Double.toString(value));
@@ -21,25 +24,28 @@ public class SFloat implements INumbers{
         return null;
     }
 
+    /*
+    Returns the Scrabble representation of the object
+     */
     public SFloat asFloat() {
         return new SFloat(value);
     }
     // endregion
 
     // region : operations
-    public SFloat add(SNumber addend) {
+    public SFloat add(INumbers addend) {
         return addend.addToFloat(this);
     }
 
-    public SFloat subtract(SNumber subtractor) {
+    public SFloat subtract(INumbers subtractor) {
         return subtractor.subtractToFloat(this);
     }
 
-    public SFloat multiply(SNumber product) {
+    public SFloat multiply(INumbers product) {
         return product.multiplyToFloat(this);
     }
 
-    public SFloat divide(SNumber divisor) {
+    public SFloat divide(INumbers divisor) {
         return divisor.divideToFloat(this);
     }
     // endregion
@@ -51,7 +57,7 @@ public class SFloat implements INumbers{
     }
 
     @Override
-    public SNumber subtractToInt(SInt subtrahend) {
+    public INumbers subtractToInt(SInt subtrahend) {
         return null;
     }
 
@@ -61,12 +67,12 @@ public class SFloat implements INumbers{
     }
 
     @Override
-    public SFloat multiplyToFloat(SNumber product) {
+    public SFloat multiplyToFloat(INumbers product) {
         return null;
     }
 
     @Override
-    public SFloat divideToFloat(SNumber divisor) {
+    public SFloat divideToFloat(INumbers divisor) {
         return null;
     }
 
@@ -84,4 +90,11 @@ public class SFloat implements INumbers{
     public SFloat divideToInt(SInt dividend) {
         return null;
     }
+    /*
+    Return this object float value
+     */
+    public double getValue() {
+        return value;
+    }
+    // endregion
 }
