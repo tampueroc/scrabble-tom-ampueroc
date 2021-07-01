@@ -5,21 +5,21 @@ import java.util.Objects;
 public class SString extends abstractTypes{
     private final String value;
 
-    /*
-    Creates a SString object
+    /**
+     * Creates a Scrabble String object
+     * @param value
      */
     public SString(String value) {
         this.value = value;
     }
-
-    /*
-    Receives an ITypes object and summons it's addToString method. It
-    uses this SString object as an input. It returns the concatanation of
-    it's value and it's toString() representation
-     */
-    public SString add(ITypes addend) {
-        return addend.addToString(this);
+    /**
+     * Returns this Scrabble String value
+     **/
+    @Override
+    public String toString(){
+        return value;
     }
+
 
     /*
     Returns this object's hash value
@@ -40,14 +40,6 @@ public class SString extends abstractTypes{
             return other.toString().equals(this.toString());
         }
         return false;
-    }
-
-    /*
-    Returns this object's SString value
-     */
-    @Override
-    public String toString(){
-        return value;
     }
 
     /*
@@ -103,6 +95,14 @@ public class SString extends abstractTypes{
     public ITypes andBinary(SBinary sBinary) {
         return null;
     }
+    */
 
-     */
+    /** TODO
+     * Receives an ITypes object and summons it's addToString method. It
+     * uses this SString object as an input. It returns the concatenation of
+     * it's value and it's toString() representation
+     **/
+    public SString add(ITypes addend) {
+        return addend.addToString(this);
+    }
 }
