@@ -12,7 +12,7 @@ public class SString extends abstractTypes{
         this.value = value;
     }
 
-    /* TODO
+    /*
     Receives an ITypes object and summons it's addToString method. It
     uses this SString object as an input. It returns the concatanation of
     it's value and it's toString() representation
@@ -57,4 +57,52 @@ public class SString extends abstractTypes{
     public SString asString() {
         return new SString(value);
     }
+
+    /*
+    @Override
+    public SInt asInt() {
+        return null;
+    }
+
+    @Override
+    public SBinary asBinary() {
+        return null;
+    }
+
+    @Override
+    public SFloat asFloat() {
+        return null;
+    }
+
+    @Override
+    public SBoolean asBoolean() {
+        return null;
+    }
+
+    @Override
+    public ITypes and(ITypes conjunct) {
+        return null;
+    }
+
+    @Override
+    public ITypes andBool(SBoolean bool) {
+        return null;
+    }
+
+    @Override
+    public ITypes or(ITypes operand) {
+        return null;
+    }
+
+    @Override
+    public ITypes orBool(ITypes operand) {
+        return null;
+    }
+
+    @Override
+    public ITypes andBinary(SBinary sBinary) {
+        return null;
+    }
+
+     */
 }
