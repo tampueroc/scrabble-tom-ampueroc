@@ -34,20 +34,24 @@ public interface ITypes {
 
     // BinaryOperands
     /**
-     * Returns the ITypes result of the sum of this object and the given Scrabble Binary object.
+     * Returns the ITypes result of the sum of this object Scrabble Type
+     * representation and the given Scrabble Binary object.
     **/
     ITypes addToBinary(SBinary addend);
     /**
-     * Returns the ITypes result of the subtraction of this object and the given Scrabble Binary object.
-    **/
+     * Returns the ITypes result of the subtraction of this object Scrabble Type
+     * representation and the given Scrabble Binary object.
+     */
     ITypes subtractToBinary(SBinary subtrahend);
     /**
-    * Returns the ITypes result of the multiplication of this object and the given Scrabble Binary object.
-    **/
+    * Returns the ITypes result of the multiplication of this object Scrabble Type
+     * representation and the given Scrabble Binary object.
+     */
     ITypes multiplyToBinary(SBinary product);
     /**
-     * Returns the ITypes result of the division of this object and the given Scrabble Binary object.
-    **/
+     * Returns the ITypes result of the division of this object Scrabble Type
+     * representation and the given Scrabble Binary object.
+     */
     ITypes divideToBinary(SBinary dividend);
 
     // LogicalOperands
@@ -80,6 +84,8 @@ public interface ITypes {
      * Scrabble Binary object
      **/
     ITypes orBinary(SBinary operand);
+
+
 
     //Numbers Operands
     /**

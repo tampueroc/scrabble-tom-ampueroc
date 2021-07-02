@@ -5,6 +5,8 @@ import cl.uchile.dcc.scrabble.types.SString;
 import cl.uchile.dcc.scrabble.types.abstractTypes;
 import cl.uchile.dcc.scrabble.types.ITypes;
 
+import java.util.Objects;
+
 public class SBinary extends abstractTypes implements ITypes{
     private final String value;
 
@@ -372,16 +374,6 @@ public class SBinary extends abstractTypes implements ITypes{
         return dividend.divideToBinary(this);
     }
 
-    /**
-     * Returns the Scrabble String result of the concatenation of this Scrabble String and a given
-     * Scrabble String
-     *
-     */
-    @Override
-    public SString addToString(SString addend) {
-        return null;
-    }
-
     private int negativeBinaryToInt(String binary){
         int n = binary.length() - 1;
         int w = -bitToInt(binary.charAt(0)) * (int) Math.pow(2, n);
@@ -411,19 +403,62 @@ public class SBinary extends abstractTypes implements ITypes{
     }
 
     /**
-     * TODO
+     Returns this object's hash value
      */
     @Override
     public int hashCode() {
-        return super.hashCode();
+        return Objects.hash(SBinary.class);
     }
 
-    /** TODO
-     *
+    /**
+     Receives an object and determines if its equal to this object by returning a
+     boolean value.
      */
     @Override
     public boolean equals(Object obj) {
-        return super.equals(obj);
+        if (obj instanceof SBinary) {
+            var other = (SBinary) obj;
+            StringBuilder s1 = new StringBuilder();
+            StringBuilder s2 = new StringBuilder();
+            int l1 = this.getValue().length();
+            int l2 = other.getValue().length();
+            int max_length = java.lang.Math.max(l1, l2);
+            int n1 = this.asInteger().getValue();
+            int n2 = other.asInteger().getValue();
+            if ((n1 > 0 && n2 < 0) || (n2 > 0 && n1 < 0)){
+                return false;
+            }
+            else if(n1 < 0 && n2 < 0){
+                while(l1 < max_length){
+                    s1.append("1");
+                    l1 ++;
+                }
+                while(l2 < max_length){
+                    s2.append("1");
+                    l2 ++;
+                }
+            }
+            while(l1 < max_length){
+                s1.append("0");
+                l1 ++;
+            }
+            while(l2 < max_length){
+                s2.append("0");
+                l2 ++;
+            }
+            s1.append(this.getValue());
+            s2.append(other.getValue());
+            String binary_value1 = s1.toString();
+            String binary_value2 = s2.toString();
+            return binary_value1.equals(binary_value2);
+        }
+        return false;
     }
-
+    /**
+     * Returns a string representation of this object's value
+     */
+    @Override
+    public String toString() {
+        return this.getValue();
+    }
 }

@@ -12,16 +12,17 @@ public class SString extends abstractTypes{
     public SString(String value) {
         this.value = value;
     }
-    /**
+
+    /** TODO
      * Returns this Scrabble String value
      **/
     @Override
     public String toString(){
-        return value;
+        return this.getValue();
     }
 
 
-    /*
+    /**
     Returns this object's hash value
      */
     @Override
@@ -29,7 +30,7 @@ public class SString extends abstractTypes{
         return Objects.hash(SString.class);
     }
 
-    /*
+    /**
     Receives an object and determines if its equal to this object by returning a
     boolean value.
      */
@@ -104,5 +105,13 @@ public class SString extends abstractTypes{
      **/
     public SString add(ITypes addend) {
         return addend.addToString(this);
+    }
+
+    /**
+     * TODO
+     * @return
+     */
+    public String getValue() {
+        return value;
     }
 }
