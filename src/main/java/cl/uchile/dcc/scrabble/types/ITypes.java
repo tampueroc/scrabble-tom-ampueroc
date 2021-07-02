@@ -72,13 +72,14 @@ public interface ITypes {
     /**
      * Returns the Scrabble Type result of the 'OR' operation between this Scrabble Type and a given
      * Scrabble Boolean object
-     **/
-    ITypes orBool(ITypes operand);
+     *
+     * @param operand*/
+    ITypes orBool(SBoolean operand);
     /**
      * Returns the Scrabble Type result of the 'OR' operation between this Scrabble Type and a given
      * Scrabble Binary object
      **/
-    ITypes orBinary(ITypes operand);
+    ITypes orBinary(SBinary operand);
 
     //Numbers Operands
     /**
