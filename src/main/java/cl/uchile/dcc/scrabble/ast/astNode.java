@@ -1,8 +1,8 @@
-package cl.uchile.dcc.scrabble.AST;
+package cl.uchile.dcc.scrabble.ast;
 
 import cl.uchile.dcc.scrabble.types.ITypes;
 
-public interface IAST {
+public interface astNode {
     /**
      * Operates the node
      */

@@ -305,4 +305,12 @@ public abstract class abstractTypes implements  ITypes{
     public SString addToString(SString addend) {
         return new SString(addend.toString() + this.toString());
     }
+
+    /**
+     * Operates the node
+     */
+    @Override
+    public ITypes operate() {
+        return this;
+    }
 }

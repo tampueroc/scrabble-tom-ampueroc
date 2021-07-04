@@ -1,10 +1,11 @@
 package cl.uchile.dcc.scrabble.types;
 
+import cl.uchile.dcc.scrabble.ast.astNode;
 import cl.uchile.dcc.scrabble.types.numbers.SBinary;
 import cl.uchile.dcc.scrabble.types.numbers.SFloat;
 import cl.uchile.dcc.scrabble.types.numbers.SInteger;
 
-public interface ITypes {
+public interface ITypes extends astNode {
     // TODO Documentacion
 
     // Transformations
@@ -162,7 +163,5 @@ public interface ITypes {
      * Scrabble String
      **/
     SString addToString(SString addend);
-
-
 
 }
