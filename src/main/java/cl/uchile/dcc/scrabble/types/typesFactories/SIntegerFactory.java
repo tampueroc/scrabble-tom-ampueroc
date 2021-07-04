@@ -9,6 +9,9 @@ import java.util.Map;
 public class SIntegerFactory {
     static Map<Integer, SInteger> SInteger = new HashMap<>();
 
+    /**
+     * Creates and returns a Scrabble Integer object and stores it in a HashMap in order to ensue it's uniqueness.
+     */
     public static SInteger createSInteger(int value){
         Integer key = value; //Para que tenga coherencia
         SInteger result = SInteger.get(key);
