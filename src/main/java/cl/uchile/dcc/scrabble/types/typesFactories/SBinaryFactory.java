@@ -6,15 +6,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SBinaryFactory {
-    static Map<String, SBinary> SBinary = new HashMap<>();
+    static Map<String, SBinary> mapSBinary = new HashMap<>();
 
     public static SBinary createSBinary(String value){
         String key = value; //Para que tenga coherencia
-        SBinary result = SBinary.get(key);
+        SBinary result = mapSBinary.get(key);
         if (result == null){
             result = new SBinary(value);
-            SBinary.put(key, result);
+            mapSBinary.put(key, result);
         }
         return result;
+    }
+    /**
+     * Returns the HashMap where each distinct Scrabble Binary object is stored
+     */
+    public Map<String, SBinary> getMap(){
+        return mapSBinary;
     }
 }
