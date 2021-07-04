@@ -85,6 +85,11 @@ public interface ITypes {
      **/
     ITypes orBinary(SBinary operand);
 
+    /**
+     * Returns the negation of this Scrabble Type (if it exists)
+     */
+    ITypes negate();
+
 
 
     //Numbers Operands
@@ -98,11 +103,6 @@ public interface ITypes {
      * Scrabble Float
      **/
     ITypes subtractToFloat(SFloat subtrahend);
-    /**
-     * Returns the Scrabble Type result of the subtraction of this Scrabble Type and a given
-     * Scrabble Integer
-     **/
-    ITypes subtractToInt(SInteger subtrahend);
     /**
      * Returns the Scrabble Type result of the multiplication of this Scrabble Type and a given
      * Scrabble Float
@@ -119,15 +119,20 @@ public interface ITypes {
      */
     ITypes addToInteger(SInteger addend);
     /**
+     * Returns the Scrabble Type result of the subtraction of this Scrabble Type and a given
+     * Scrabble Integer
+     **/
+    ITypes subtractToInt(SInteger subtrahend);
+    /**
      * Returns the Scrabble Type result of the multiplication of this Scrabble Type and a given
      * Scrabble Integer
      */
-    ITypes multiplyToInt(SInteger product);
+    ITypes multiplyToInteger(SInteger product);
     /**
      * Returns the Scrabble Type result of the division of this Scrabble Type and a given
      * Scrabble Integer
      **/
-    ITypes divideToInt(SInteger dividend);
+    ITypes divideToInteger(SInteger dividend);
 
     // Operands
     /**
@@ -157,5 +162,7 @@ public interface ITypes {
      * Scrabble String
      **/
     SString addToString(SString addend);
+
+
 
 }

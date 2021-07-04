@@ -48,11 +48,12 @@ class SBooleanTest {
     }
 
     @Test
-    void negate() {
+    void negate() { //TODO
         SBoolean expectedResult = new SBoolean(false);
         SBoolean actualResult = STrue.negate();
         assertEquals(expectedResult, actualResult);
     }
+
 
 
 }

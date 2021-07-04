@@ -141,7 +141,7 @@ public class SInteger extends abstractTypes implements ITypes{
      */
     @Override
     public ITypes divideToFloat(SFloat divisor) {
-            return divisor.divideToInt(this);
+            return divisor.divideToInteger(this);
     }
 
     /** TODO
@@ -158,7 +158,7 @@ public class SInteger extends abstractTypes implements ITypes{
      * Scrabble Integer
      */
     @Override
-    public ITypes multiplyToInt(SInteger product) {
+    public ITypes multiplyToInteger(SInteger product) {
         return new SInteger(product.getValue() * this.getValue());
     }
 
@@ -167,8 +167,8 @@ public class SInteger extends abstractTypes implements ITypes{
      * Scrabble Integer
      */
     @Override
-    public ITypes divideToInt(SInteger dividend) {
-        return new SInteger(dividend.getValue() * this.getValue());
+    public ITypes divideToInteger(SInteger dividend) {
+        return new SInteger(dividend.getValue() / this.getValue());
     }
 
     /** TODO
@@ -195,7 +195,7 @@ public class SInteger extends abstractTypes implements ITypes{
      */
     @Override
     public ITypes multiply(ITypes product) {
-        return product.multiplyToInt(this);
+        return product.multiplyToInteger(this);
     }
 
     /** TODO
@@ -204,7 +204,7 @@ public class SInteger extends abstractTypes implements ITypes{
      */
     @Override
     public ITypes divide(ITypes dividend) {
-        return dividend.divideToInt(this);
+        return dividend.divideToInteger(this);
     }
 
 

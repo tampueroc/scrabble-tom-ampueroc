@@ -133,7 +133,7 @@ public class SFloat extends abstractTypes implements ITypes{
      * Scrabble Integer
      */
     @Override
-    public ITypes divideToInt(SInteger divisor) {
+    public ITypes divideToInteger(SInteger divisor) {
         return new SFloat(divisor.getValue()/this.getValue());
     }
 
@@ -160,7 +160,7 @@ public class SFloat extends abstractTypes implements ITypes{
      * Scrabble Integer
      */
     @Override
-    public ITypes multiplyToInt(SInteger product) {
+    public ITypes multiplyToInteger(SInteger product) {
         return new SFloat(product.getValue() * this.getValue());
     }
 }

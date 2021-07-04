@@ -269,6 +269,27 @@ public class SBinary extends abstractTypes implements ITypes{
     }
 
     /**
+     * Returns the negation of this Scrabble Binary object(if it exists)
+     */
+    @Override
+    public SBinary negate() {
+        int l = this.getValue().length();
+        String str = this.getValue();
+        StringBuilder result = new StringBuilder();
+        for(int i = 0; i < l; i++){
+            if(str.charAt(i) == '1'){
+                result.append("0");
+            }
+            else{
+                result.append("1");
+            }
+        }
+        String result_value = result.toString();
+        return new SBinary(result_value);
+    }
+
+
+    /**
      * Returns the Scrabble Float result of the sum of this Scrabble Binary object
      * and a given Scrabble Float
      */
@@ -327,7 +348,7 @@ public class SBinary extends abstractTypes implements ITypes{
      * object and a given Scrabble Integer object
      */
     @Override
-    public ITypes multiplyToInt(SInteger product) {
+    public ITypes multiplyToInteger(SInteger product) {
         return new SInteger(product.getValue() * this.asInteger().getValue());
     }
 
@@ -336,7 +357,7 @@ public class SBinary extends abstractTypes implements ITypes{
      * and a given Scrabble Integer
      */
     @Override
-    public ITypes divideToInt(SInteger dividend) {
+    public ITypes divideToInteger(SInteger dividend) {
         return new SInteger(dividend.getValue() / this.asInteger().getValue());
     }
 

@@ -128,7 +128,7 @@ public class SBoolean extends abstractTypes implements ITypes{
         return false;
     }
 
-    /**
+    /**TODO
      * Return a Scrabble Booleans object representing the negation of this Booleans value.
      */
     public SBoolean negate(){

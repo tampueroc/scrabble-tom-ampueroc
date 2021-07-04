@@ -6,7 +6,7 @@ import cl.uchile.dcc.scrabble.types.numbers.SInteger;
 
 public abstract class abstractTypes implements  ITypes{
     /**
-     * Returns the Scrabble String represenation of this object
+     * Returns the Scrabble String representation of this object
      **/
     @Override
     public SString asString() {
@@ -158,6 +158,14 @@ public abstract class abstractTypes implements  ITypes{
     }
 
     /**
+     * Returns the negation of this Scrabble Type (if it exists)
+     */
+    @Override
+    public ITypes negate() {
+        return null;
+    }
+
+    /**
      * Returns the Scrabble Type result of the sum of this Scrabble Type and a given
      * Scrabble Float
      *
@@ -230,7 +238,7 @@ public abstract class abstractTypes implements  ITypes{
      * @param product
      */
     @Override
-    public ITypes multiplyToInt(SInteger product) {
+    public ITypes multiplyToInteger(SInteger product) {
         return null;
     }
 
@@ -241,7 +249,7 @@ public abstract class abstractTypes implements  ITypes{
      * @param dividend
      */
     @Override
-    public ITypes divideToInt(SInteger dividend) {
+    public ITypes divideToInteger(SInteger dividend) {
         return null;
     }
 
@@ -290,7 +298,7 @@ public abstract class abstractTypes implements  ITypes{
     }
 
     /** TODO
-     * Returns the Scrabble String result of the concatanation of this Scrabble String and a given
+     * Returns the Scrabble String result of the concatenation of this Scrabble String and a given
      * Scrabble String
      */
     @Override
