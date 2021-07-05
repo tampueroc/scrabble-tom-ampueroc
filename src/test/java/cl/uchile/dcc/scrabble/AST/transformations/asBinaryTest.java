@@ -73,7 +73,7 @@ class asBinaryTest {
 
     @Test
     void operate() {
-
+        //owo
         SBin1 = new SBinary(random_binary_value_1);
         assertEquals(SBin1, SBin1.asBinary());
     }
