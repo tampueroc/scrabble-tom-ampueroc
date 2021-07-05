@@ -7,22 +7,19 @@ import java.util.Map;
 
 public class SBooleanFactory {
 
-    static Map<Boolean, SBoolean> mapSBoolean = new HashMap<>();
+    private static Map<Boolean, SBoolean> mapSBoolean = new HashMap<>();
 
     public static SBoolean createSBoolean(boolean value){
-        Boolean key = value; //Para que tenga coherencia
+        Boolean key = value;
         SBoolean result = mapSBoolean.get(key);
-        if (result == null){
+        if (result == null) {
             result = new SBoolean(value);
             mapSBoolean.put(key, result);
         }
         return result;
     }
 
-    /**
-     * Returns the HashMap where each distinct Scrabble Boolean is stored
-     */
-    public Map<Boolean, SBoolean> getMap() {
+    public static Map<Boolean, SBoolean> getMapSBoolean() {
         return mapSBoolean;
     }
 }

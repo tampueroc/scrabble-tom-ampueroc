@@ -20,7 +20,7 @@ class SBooleanFactoryTest {
     @Test
     void createSBoolean() {
         SBooleanFactory FSBoolean = new SBooleanFactory();
-        Map<Boolean, SBoolean> mapFSBoolean = FSBoolean.getMap();
+        Map<Boolean, SBoolean> mapFSBoolean = FSBoolean.getMapSBoolean();
         assert mapFSBoolean.size() == 0;
 
         SBoolean SBool_1 = SBooleanFactory.createSBoolean(T);

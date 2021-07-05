@@ -1,12 +1,12 @@
 package cl.uchile.dcc.scrabble.types;
 
-import cl.uchile.dcc.scrabble.ast.astNode;
+import cl.uchile.dcc.scrabble.AST.INodes;
 import cl.uchile.dcc.scrabble.types.numbers.SBinary;
 import cl.uchile.dcc.scrabble.types.numbers.SFloat;
 import cl.uchile.dcc.scrabble.types.numbers.SInteger;
 
-public interface ITypes extends astNode {
-    // TODO Documentacion
+public interface ITypes extends INodes {
+    // TODO Documentation
 
     // Transformations
     /**
@@ -159,9 +159,10 @@ public interface ITypes extends astNode {
 
     // String Operands
     /**
-     * Returns the Scrabble String result of the concatanation of this Scrabble String and a given
+     * Returns the Scrabble String result of the concatenation of this Scrabble String and a given
      * Scrabble String
      **/
     SString addToString(SString addend);
 
+    ITypes operate();
 }
