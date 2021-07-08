@@ -43,27 +43,27 @@ public class SBoolean extends abstractTypes implements ITypes{
         return String.valueOf(this.isValue());
     }
 
-    /** TODO
-     * Returns the Scrabble Type result of the 'AND' operation between this Scrabble Type and a given
-     * Scrabble Boolean object
+    /**
+     * Returns the result of the operation "AND" between a Scrabble Type object and a Scrabble Boolean one, as a Scrabble
+     * Boolean Type.
      */
     @Override
     public ITypes andBool(SBoolean bool) {
         return new SBoolean(bool.isValue() && this.isValue());
     }
 
-    /** TODO
-     * Returns the Scrabble Type result of the 'OR' operation between this Scrabble Type and a given
-     * Scrabble Boolean object
+    /**
+     * Returns the result of the operation "OR" between a Scrabble Type object and a Scrabble Boolean one, as a Scrabble
+     * Boolean Type.
      */
     @Override
     public ITypes orBool(SBoolean operand) {
         return new SBoolean(operand.isValue() || this.isValue());
     }
 
-    /** TODO
-     * Returns the Scrabble Type result of the 'OR' operation between this Scrabble Type and a given
-     * Scrabble Binary object
+    /**
+     * Returns the result of the operation "AND" between a Scrabble Type object and a Scrabble Binary, as a
+     * Scrabble Binary Type
      */
     @Override
     public ITypes orBinary(SBinary operand) {
@@ -80,16 +80,16 @@ public class SBoolean extends abstractTypes implements ITypes{
         }
     }
 
-    /** TODO
-     * Returns the Scrabble Type result of the 'AND' operation between this Scrabble Type and a given one
+    /**
+     * Returns the result of the operation "AND" between two Scrabble Types, the given one and this.
      */
     @Override
     public ITypes and(ITypes conjunct) {
         return conjunct.andBool(this);
     }
 
-    /** TODO
-     * Returns the Scrabble Type result of the 'OR' operation between this Scrabble Type and a given one
+    /**
+     * Returns the result of the operation "OR" between two Scrabble Types, the given one and this.
      */
     @Override
     public ITypes or(ITypes operand) {
@@ -116,8 +116,8 @@ public class SBoolean extends abstractTypes implements ITypes{
     }
 
     /**
-     Receives an object and determines if its equal to this object by returning a
-     boolean value.
+     * Receives an object and determines if its equal to this object by returning a
+     * boolean value.
      */
     @Override
     public boolean equals(Object obj) {
@@ -128,8 +128,8 @@ public class SBoolean extends abstractTypes implements ITypes{
         return false;
     }
 
-    /**TODO
-     * Return a Scrabble Booleans object representing the negation of this Booleans value.
+    /**
+     * Returns the negation of the value of this Scrabble Boolean object.
      */
     public SBoolean negate(){
         boolean result_value = !this.isValue();

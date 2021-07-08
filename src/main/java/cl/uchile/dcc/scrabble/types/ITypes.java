@@ -6,7 +6,6 @@ import cl.uchile.dcc.scrabble.types.numbers.SFloat;
 import cl.uchile.dcc.scrabble.types.numbers.SInteger;
 
 public interface ITypes extends INodes {
-    // TODO Documentation
 
     // Transformations
     /**
@@ -35,23 +34,23 @@ public interface ITypes extends INodes {
 
     // BinaryOperands
     /**
-     * Returns the ITypes result of the sum of this object Scrabble Type
-     * representation and the given Scrabble Binary object.
-    **/
+     * Returns the Scrabble Type result of the addition of this Scrabble Type object
+     * and a given Scrabble Binary.
+     */
     ITypes addToBinary(SBinary addend);
     /**
-     * Returns the ITypes result of the subtraction of this object Scrabble Type
-     * representation and the given Scrabble Binary object.
+     * Returns the Scrabble Type result of the subtraction of this Scrabble Type object
+     * and a given Scrabble Binary.
      */
     ITypes subtractToBinary(SBinary subtrahend);
     /**
-    * Returns the ITypes result of the multiplication of this object Scrabble Type
-     * representation and the given Scrabble Binary object.
+     * Returns the Scrabble Type result of the multiplication of this Scrabble Type object
+     * and a given Scrabble Binary.
      */
     ITypes multiplyToBinary(SBinary product);
     /**
-     * Returns the ITypes result of the division of this object Scrabble Type
-     * representation and the given Scrabble Binary object.
+     * Returns the Scrabble Type result of the division of this Scrabble Type object
+     * and a given Scrabble Binary.
      */
     ITypes divideToBinary(SBinary dividend);
 
@@ -77,8 +76,7 @@ public interface ITypes extends INodes {
     /**
      * Returns the Scrabble Type result of the 'OR' operation between this Scrabble Type and a given
      * Scrabble Boolean object
-     *
-     * @param operand*/
+     **/
     ITypes orBool(SBoolean operand);
     /**
      * Returns the Scrabble Type result of the 'OR' operation between this Scrabble Type and a given
@@ -87,10 +85,9 @@ public interface ITypes extends INodes {
     ITypes orBinary(SBinary operand);
 
     /**
-     * Returns the negation of this Scrabble Type (if it exists)
+     * Returns the negation of the value of this Scrabble Type object.
      */
     ITypes negate();
-
 
 
     //Numbers Operands
@@ -123,7 +120,8 @@ public interface ITypes extends INodes {
      * Returns the Scrabble Type result of the subtraction of this Scrabble Type and a given
      * Scrabble Integer
      **/
-    ITypes subtractToInt(SInteger subtrahend);
+    ITypes subtractToInteger(SInteger subtrahend);
+
     /**
      * Returns the Scrabble Type result of the multiplication of this Scrabble Type and a given
      * Scrabble Integer
@@ -164,5 +162,8 @@ public interface ITypes extends INodes {
      **/
     SString addToString(SString addend);
 
+    /**
+     * Operates this object to return it's Scrabble Type representation of itself
+     */
     ITypes operate();
 }

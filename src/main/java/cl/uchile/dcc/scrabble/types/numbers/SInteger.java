@@ -55,9 +55,9 @@ public class SInteger extends abstractTypes implements ITypes{
         return new SInteger(this.getValue());
     }
 
-    /** TODO
-     * Returns the Scrabble Binary result of the sum of this object Scrabble Binary
-     * representation and the given Scrabble Binary object.
+    /**
+     * Returns the Scrabble Binary result of the addition of this Scrabble Integer object
+     * and a given Scrabble Binary.
      */
     @Override
     public ITypes addToBinary(SBinary addend) {
@@ -66,9 +66,9 @@ public class SInteger extends abstractTypes implements ITypes{
         return SInt.asBinary();
     }
 
-    /** TODO
-     * Returns the SBinary result of the subtraction of this object Scrabble Binary
-     * representation and the given Scrabble Binary object.
+    /**
+     * Returns the Scrabble Binary result of the subtraction of this Scrabble Integer object
+     * and a given Scrabble Binary.
      */
     @Override
     public ITypes subtractToBinary(SBinary subtrahend) {
@@ -77,9 +77,9 @@ public class SInteger extends abstractTypes implements ITypes{
         return SInt.asBinary();
     }
 
-    /** TODO
-     * Returns the ITypes result of the multiplication of this object Scrabble Type
-     * representation and the given Scrabble Binary object.
+    /**
+     * Returns the Scrabble Binary result of the multiplication of this Scrabble Integer object
+     * and a given Scrabble Binary.
      */
     @Override
     public ITypes multiplyToBinary(SBinary product) {
@@ -88,9 +88,9 @@ public class SInteger extends abstractTypes implements ITypes{
         return SInt.asBinary();
     }
 
-    /** TODO
-     * Returns the ITypes result of the division of this object Scrabble Type
-     * representation and the given Scrabble Binary object.
+    /**
+     * Returns the Scrabble Type result of the division of this Scrabble Integer object
+     * and a given Scrabble Binary.
      */
     @Override
     public ITypes divideToBinary(SBinary dividend) {
@@ -99,36 +99,36 @@ public class SInteger extends abstractTypes implements ITypes{
         return SInt.asBinary();
     }
 
-    /** TODO
-     * Returns the Scrabble Type result of the sum of this Scrabble Type and a given
-     * Scrabble Float
+    /**
+     * Returns the Scrabble Float result of the addition of this Scrabble Integer object
+     * and a given Scrabble Float.
      */
     @Override
     public ITypes addToFloat(SFloat addend) {
         return new SFloat(addend.getValue() + this.getValue());
     }
 
-    /** TODO
-     * Returns the Scrabble Type result of the subtraction of this Scrabble Type and a given
-     * Scrabble Float
+    /**
+     * Returns the Scrabble Float result of the subtraction of this Scrabble Integer object
+     * and a given Scrabble Float.
      */
     @Override
     public ITypes subtractToFloat(SFloat subtrahend) {
         return new SFloat(subtrahend.getValue() - this.getValue());
     }
 
-    /** TODO
-     * Returns the Scrabble Type result of the subtraction of this Scrabble Type and a given
-     * Scrabble Integer
+    /**
+     * Returns the Scrabble Integer result of the subtraction of this Scrabble Integer object
+     * and a given Scrabble Integer.
      */
     @Override
-    public ITypes subtractToInt(SInteger subtrahend) {
+    public ITypes subtractToInteger(SInteger subtrahend) {
         return new SInteger(subtrahend.getValue()- this.getValue());
     }
 
     /**
-     * Returns the Scrabble Type result of the multiplication of this Scrabble Type and a given
-     * Scrabble Float
+     * Returns the Scrabble Float result of the multiplication of this Scrabble Integer object
+     * and a given Scrabble Float.
      */
     @Override
     public ITypes multiplyToFloat(SFloat product) {
@@ -136,71 +136,71 @@ public class SInteger extends abstractTypes implements ITypes{
     }
 
     /**
-     * Returns the Scrabble Type result of the division of this Scrabble Type and a given
-     * Scrabble Float
+     * Returns the Scrabble Float result of the division of this Scrabble Integer object
+     * and a given Scrabble Float.
      */
     @Override
     public ITypes divideToFloat(SFloat divisor) {
-            return divisor.divideToInteger(this);
+        return new SFloat(divisor.getValue() / this.getValue());
     }
 
-    /** TODO
-     * Returns the Scrabble Type result of the sum of this Scrabble Type and a given
-     * Scrabble Integer
+    /**
+     * Returns the Scrabble Integer result of the addition of this Scrabble Integer object
+     * and a given Scrabble Integer.
      */
     @Override
     public ITypes addToInteger(SInteger addend) {
         return new SInteger(addend.getValue() + this.getValue());
     }
 
-    /** TODO
-     * Returns the Scrabble Type result of the multiplication of this Scrabble Type and a given
-     * Scrabble Integer
+    /**
+     * Returns the Scrabble Integer result of the multiplication of this Scrabble Integer object
+     * and a given Scrabble Integer.
      */
     @Override
     public ITypes multiplyToInteger(SInteger product) {
         return new SInteger(product.getValue() * this.getValue());
     }
 
-    /** TODO
-     * Returns the Scrabble Type result of the division of this Scrabble Type and a given
-     * Scrabble Integer
+    /**
+     * Returns the Scrabble Integer result of the division of this Scrabble Integer object
+     * and a given Scrabble Integer.
      */
     @Override
     public ITypes divideToInteger(SInteger dividend) {
         return new SInteger(dividend.getValue() / this.getValue());
     }
 
-    /** TODO
-     * Returns the Scrabble Type result of the sum of this Scrabble Type and a given
-     * Scrabble Type
+    /**
+         * Returns the Scrabble Integer result of the addition of this Scrabble Integer and a given
+     * Scrabble Type, using the addToInteger method.
      */
     @Override
     public ITypes add(ITypes addend) {
         return addend.addToInteger(this);
     }
 
-    /** TODO
-     * Returns the Scrabble Type result of the subtraction of this Scrabble Type and a given
-     * Scrabble Type
+    /**
+     * Returns the Scrabble Type result of the subtraction of this Scrabble Integer and a given
+     * Scrabble Type, using the subtractToInteger method.
      */
     @Override
     public ITypes subtract(ITypes subtrahend) {
-        return subtrahend.subtractToInt(this);
+        return subtrahend.subtractToInteger(this);
     }
 
-    /** TODO
-     * Returns the Scrabble Type result of the multiplication of this Scrabble Type and a given
-     * Scrabble Type
+    /**
+     * Returns the Scrabble Type result of the multiplication of this Scrabble Integer and a given
+     * Scrabble Type, using the multiplyToInteger method.
      */
     @Override
     public ITypes multiply(ITypes product) {
         return product.multiplyToInteger(this);
     }
 
-    /** TODO
-     * Returns the Scrabble Type result of the division of this Scrabble Type and a given
-     * Scrabble Type
+    /**
+     * Returns the Scrabble Type result of the division of this Scrabble Integer and a given
+     * Scrabble Type, using the divideToInteger method.
      */
     @Override
     public ITypes divide(ITypes dividend) {
@@ -271,7 +271,7 @@ public class SInteger extends abstractTypes implements ITypes{
     }
 
     /**
-     * Returns a string representation of this object's value
+     * Returns this Scrabble Integer value as a String.
      */
     @Override
     public String toString() {

@@ -7,20 +7,18 @@ public class SString extends abstractTypes{
 
     /**
      * Creates a Scrabble String object
-     * @param value
      */
     public SString(String value) {
         this.value = value;
     }
 
-    /** TODO
+    /**
      * Returns this Scrabble String value
      **/
     @Override
     public String toString(){
         return this.getValue();
     }
-
 
     /**
     Returns this object's hash value
@@ -31,8 +29,8 @@ public class SString extends abstractTypes{
     }
 
     /**
-    Receives an object and determines if its equal to this object by returning a
-    boolean value.
+    * Receives an object and determines if its equal to this object by returning a
+    * boolean value.
      */
     @Override
     public boolean equals(Object obj) {
@@ -51,18 +49,17 @@ public class SString extends abstractTypes{
         return new SString(value);
     }
 
-    /** TODO
+    /**
      * Receives an ITypes object and summons it's addToString method. It
      * uses this SString object as an input. It returns the concatenation of
-     * it's value and it's toString() representation
+     * it's value and it's toString() result.
      **/
     public SString add(ITypes addend) {
         return addend.addToString(this);
     }
 
     /**
-     * TODO
-     * @return
+     * Returns the Scrabble String Type object's value
      */
     public String getValue() {
         return value;

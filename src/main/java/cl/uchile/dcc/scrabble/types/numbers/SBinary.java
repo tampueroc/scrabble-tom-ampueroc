@@ -12,7 +12,6 @@ public class SBinary extends abstractTypes implements ITypes{
 
     /**
      * Creates a Scrabble Binary object
-     * @param value Object value
      */
     public SBinary(String value) {
         this.value = value;
@@ -50,50 +49,50 @@ public class SBinary extends abstractTypes implements ITypes{
     }
 
     /**
-     * Returns the Scrabble Float result of the sum of this Scrabble Binary object
-     * and a given Scrabble Float
+     * Returns the Scrabble Binary result of the addition of this Scrabble Binary object
+     * and a given Scrabble Binary.
      */
     @Override
-    public ITypes addToBinary(SBinary addend) {
+    public SBinary addToBinary(SBinary addend) {
         int result = addend.asInteger().getValue() + this.asInteger().getValue();
         SInteger SInt =new SInteger(result);
         return SInt.asBinary();
     }
 
     /**
-     * Returns the Scrabble Binary result of the subtraction of this object and the given
-     * Scrabble Binary object.
+     * Returns the Scrabble Binary result of the subtraction of this Scrabble Binary object
+     * and a given Scrabble Binary.
      */
     @Override
-    public ITypes subtractToBinary(SBinary subtrahend) {
+    public SBinary subtractToBinary(SBinary subtrahend) {
         int result =subtrahend.asInteger().getValue() - this.asInteger().getValue();
         SInteger SInt = new SInteger(result);
         return SInt.asBinary();
     }
 
     /**
-     * Returns the Scrabble Binary result of the multiplication of this object
-     * and the given Scrabble Binary object.
+     * Returns the Scrabble Binary result of the multiplication of this Scrabble Binary object
+     * and a given Scrabble Binary.
      */
     @Override
-    public ITypes multiplyToBinary(SBinary product) {
+    public SBinary multiplyToBinary(SBinary product) {
         int result = product.asInteger().getValue() * this.asInteger().getValue();
         SInteger SInt = new SInteger(result);
         return SInt.asBinary();
     }
 
-    /** TODO
-     * Returns the Scrabble Binary result of the sum of this Scrabble Binary object
-     * and a given Scrabble Binary
+    /**
+     * Returns the Scrabble Binary result of the division of this Scrabble Binary object
+     * and a given Scrabble Binary.
      */
     @Override
-    public ITypes divideToBinary(SBinary dividend) {
+    public SBinary divideToBinary(SBinary dividend) {
         int result = dividend.asInteger().getValue() / this.asInteger().getValue();
         SInteger SInt = new SInteger(result);
         return SInt.asBinary();
     }
 
-    /** TODO
+    /**
      * Returns the Scrabble Type result of the 'AND' operation between this
      * Scrabble Binary and a given Scrabble Type
      */
@@ -102,9 +101,9 @@ public class SBinary extends abstractTypes implements ITypes{
         return conjunct.andBinary(this);
     }
 
-    /** TODO
+    /**
      * Returns the Scrabble Type result of the 'AND' operation between this
-     * Scrabble Type and a given Scrabble Boolean object
+     * Scrabble Binary and a given Scrabble Boolean. TODO ELABORATE?
      */
     @Override
     public ITypes andBool(SBoolean bool) {
@@ -121,9 +120,9 @@ public class SBinary extends abstractTypes implements ITypes{
         }
     }
 
-    /** TODO
-     * Returns the Scrabble Type result of the 'AND' operation between
-     * this Scrabble Type and a given Scrabble Binary object
+    /**
+     * Returns the Scrabble Type result of the 'AND' operation between this
+     * Scrabble Binary and a given Scrabble Binary. TODO ELABORATE?
      */
     @Override
     public ITypes andBinary(SBinary sBinary) {
@@ -181,18 +180,18 @@ public class SBinary extends abstractTypes implements ITypes{
         return new SBinary(resultStr);
     }
 
-    /** TODO
-     * Returns the Scrabble Type result of the 'OR' operation between
-     * this Scrabble Binary object and a given one
+    /**
+     * Returns the Scrabble Type result of the 'OR' operation between this
+     * Scrabble Binary and a given Scrabble Type
      */
     @Override
     public ITypes or(ITypes operand) {
         return operand.orBinary(this);
     }
 
-    /** TODO
+    /**
      * Returns the Scrabble Type result of the 'OR' operation between this
-     * Scrabble Type and a given Scrabble Boolean object
+     * Scrabble Binary and a given Scrabble Boolean
      */
     @Override
     public ITypes orBool(SBoolean operand) {
@@ -209,10 +208,9 @@ public class SBinary extends abstractTypes implements ITypes{
         }
     }
 
-    /** TODO
-     * Returns the Scrabble Type result of the 'OR' operation between this Scrabble Type and a given
-     * Scrabble Binary object
-     *
+    /**
+     * Returns the Scrabble Type result of the 'OR' operation between this
+     * Scrabble Binary and a given Scrabble Binary
      */
     @Override
     public ITypes orBinary(SBinary operand) {
@@ -269,7 +267,7 @@ public class SBinary extends abstractTypes implements ITypes{
     }
 
     /**
-     * Returns the negation of this Scrabble Binary object(if it exists)
+     * Returns the negation of this Scrabble Binary object value
      */
     @Override
     public SBinary negate() {
@@ -290,8 +288,8 @@ public class SBinary extends abstractTypes implements ITypes{
 
 
     /**
-     * Returns the Scrabble Float result of the sum of this Scrabble Binary object
-     * and a given Scrabble Float
+     * Returns the Scrabble Integer result of the addition of this Scrabble Binary and a given
+     * Scrabble Float, based on the values of both.
      */
     @Override
     public ITypes addToFloat(SFloat addend) {
@@ -299,8 +297,8 @@ public class SBinary extends abstractTypes implements ITypes{
     }
 
     /**
-     * Returns the Scrabble Float result of the subtraction of this Scrabble Binary
-     * object and a given Scrabble Float
+     * Returns the Scrabble Integer result of the subtraction of this Scrabble Binary and a given
+     * Scrabble Float, based on the values of both.
      */
     @Override
     public ITypes subtractToFloat(SFloat subtrahend) {
@@ -308,17 +306,17 @@ public class SBinary extends abstractTypes implements ITypes{
     }
 
     /**
-     * Returns the Scrabble Type result of the subtraction of this Scrabble Type and a given
-     * Scrabble Integer
+     * Returns the Scrabble Integer result of the subtraction of this Scrabble Binary and a given
+     * Scrabble Integer, based on the values of both.
      */
     @Override
-    public ITypes subtractToInt(SInteger subtrahend) {
+    public ITypes subtractToInteger(SInteger subtrahend) {
         return new SInteger(subtrahend.getValue() - this.asInteger().getValue());
     }
 
     /**
-     * Returns the Scrabble Float result of the multiplication of this Scrabble Binary
-     * object and a given Scrabble Float object
+     * Returns the Scrabble Integer result of the multiplication of this Scrabble Binary and a given
+     * Scrabble Float, based on the values of both.
      */
     @Override
     public ITypes multiplyToFloat(SFloat product) {
@@ -326,8 +324,8 @@ public class SBinary extends abstractTypes implements ITypes{
     }
 
     /**
-     * Returns the Scrabble Float result of the division of this Scrabble Binary object
-     * and a given Scrabble Float
+     * Returns the Scrabble Integer result of the division of this Scrabble Binary and a given
+     * Scrabble Float, based on the values of both.
      */
     @Override
     public ITypes divideToFloat(SFloat divisor) {
@@ -335,8 +333,8 @@ public class SBinary extends abstractTypes implements ITypes{
     }
 
     /**
-     * Returns the Scrabble Integer result of the sum of this Scrabble Binary object
-     * and a given Scrabble Integer
+     * Returns the Scrabble Integer result of the addition of this Scrabble Binary and a given
+     * Scrabble Integer, based on the values of both.
      */
     @Override
     public ITypes addToInteger(SInteger addend) {
@@ -344,8 +342,8 @@ public class SBinary extends abstractTypes implements ITypes{
     }
 
     /**
-     * Returns the Scrabble Integer result of the multiplication of this Scrabble
-     * object and a given Scrabble Integer object
+     * Returns the Scrabble Integer result of the multiplication of this Scrabble Binary and a given
+     * Scrabble Integer, based on the values of both.
      */
     @Override
     public ITypes multiplyToInteger(SInteger product) {
@@ -353,8 +351,8 @@ public class SBinary extends abstractTypes implements ITypes{
     }
 
     /**
-     * Returns the Scrabble Integer result of the division of this Scrabble Binary object
-     * and a given Scrabble Integer
+     * Returns the Scrabble Integer result of the division of this Scrabble Binary and a given
+     * Scrabble Integer, based on the values of both.
      */
     @Override
     public ITypes divideToInteger(SInteger dividend) {
@@ -362,25 +360,26 @@ public class SBinary extends abstractTypes implements ITypes{
     }
 
     /**
-     * TODO
+     * Returns the Scrabble Type result of the addition of this Scrabble Binary and a given
+     * Scrabble Type, using the addToBinary method.
      */
     @Override
     public ITypes add(ITypes addend) {
         return addend.addToBinary(this);
     }
 
-    /** TODO
-     * Returns the Scrabble Type result of the subtraction of this Scrabble Type and a given
-     * Scrabble Type
+    /**
+     * Returns the Scrabble Type result of the subtraction of this Scrabble Binary and a given
+     * Scrabble Type, using the subtractToBinary method.
      */
     @Override
     public ITypes subtract(ITypes subtrahend) {
         return subtrahend.subtractToBinary(this);
     }
 
-    /** TODO
-     * Returns the Scrabble Type result of the multiplication of this Scrabble Type and a given
-     * Scrabble Type
+    /**
+     * Returns the Scrabble Type result of the multiply of this Scrabble Binary and a given
+     * Scrabble Type, using the multiplyToBinary method.
      */
     @Override
     public ITypes multiply(ITypes product) {
@@ -388,7 +387,8 @@ public class SBinary extends abstractTypes implements ITypes{
     }
 
     /**
-     * TODO
+     * Returns the Scrabble Type result of the divide of this Scrabble Binary and a given
+     * Scrabble Type, using the divideToBinary method.
      */
     @Override
     public ITypes divide(ITypes dividend) {
@@ -417,7 +417,7 @@ public class SBinary extends abstractTypes implements ITypes{
     }
 
     /**
-     * Returns this Scrabble Binary object's value.
+     * Returns the Scrabble Binary Type object's value
      */
     public String getValue() {
         return value;
@@ -432,8 +432,8 @@ public class SBinary extends abstractTypes implements ITypes{
     }
 
     /**
-     Receives an object and determines if its equal to this object by returning a
-     boolean value.
+     * Receives an object and determines if its equal to this object by returning a
+     * boolean value.
      */
     @Override
     public boolean equals(Object obj) {
@@ -476,7 +476,7 @@ public class SBinary extends abstractTypes implements ITypes{
         return false;
     }
     /**
-     * Returns a string representation of this object's value
+     * Returns this Scrabble Binary String value.
      */
     @Override
     public String toString() {
