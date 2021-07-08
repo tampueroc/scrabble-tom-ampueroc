@@ -9,6 +9,11 @@ public class SBooleanFactory {
 
     private static Map<Boolean, SBoolean> mapSBoolean = new HashMap<>();
 
+    /**
+     * Factory method which returns a Scrabble Boolean object created based on the entered value. It has the
+     * quality of always returning a unique object, either it returns a previously created Scrabble Boolean
+     * with the same value or creates an entirely new one.
+     */
     public static SBoolean createSBoolean(boolean value){
         Boolean key = value;
         SBoolean result = mapSBoolean.get(key);

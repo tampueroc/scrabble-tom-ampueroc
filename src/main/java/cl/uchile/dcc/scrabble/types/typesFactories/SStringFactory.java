@@ -10,7 +10,9 @@ public class SStringFactory {
     static Map<String, SString> mapSString = new HashMap<>();
 
     /**
-     * Creates and returns a Scrabble String object and stores it in a HashMap in order to ensue it's uniqueness.
+     * Factory method which returns a Scrabble String object created based on the entered value. It has the
+     * quality of always returning a unique object, either it returns a previously created Scrabble String
+     * with the same value or creates an entirely new one.
      */
     public static SString createSString(String value){
         String key = value; //Para que tenga coherencia

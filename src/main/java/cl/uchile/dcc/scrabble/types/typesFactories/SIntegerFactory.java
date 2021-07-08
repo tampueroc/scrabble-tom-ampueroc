@@ -9,7 +9,9 @@ public class SIntegerFactory {
     static Map<Integer, SInteger> mapSInteger = new HashMap<>();
 
     /**
-     * Creates and returns a Scrabble Integer object and stores it in a HashMap in order to ensue it's uniqueness.
+     * Factory method which returns a Scrabble Integer object created based on the entered value. It has the
+     * quality of always returning a unique object, either it returns a previously created Scrabble Integer
+     * with the same value or creates an entirely new one.
      */
     public static SInteger createSInteger(int value){
         Integer key = value; //Para que tenga coherencia
