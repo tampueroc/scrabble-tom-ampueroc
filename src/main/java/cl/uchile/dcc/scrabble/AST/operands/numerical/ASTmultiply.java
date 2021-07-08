@@ -12,7 +12,7 @@ public class ASTmultiply extends twoNodes {
         super(leftChild, rightChild);
     }
     /**
-     * Evaluates this Node to returns it's Scrabble Type operation result.
+     * Evaluates this Node to returns it's Scrabble Type operation result by summoning the Scrabble Operation multiply
      */
     @Override
     public ITypes operate() {
