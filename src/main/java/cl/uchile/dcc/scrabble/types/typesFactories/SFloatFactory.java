@@ -24,7 +24,7 @@ public class SFloatFactory {
     /**
      * Returns the HashMap where each distinct Scrabble Float is stored
      */
-    public Map<Double, SFloat> getMap() {
+    public static Map<Double, SFloat> getMapSFloat() {
         return mapSFloat;
     }
 }

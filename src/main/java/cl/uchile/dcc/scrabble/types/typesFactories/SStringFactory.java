@@ -26,7 +26,7 @@ public class SStringFactory {
     /**
      * Returns the HashMap where each distinct Scrabble String is stored
      */
-    public Map<String, SString> getMap(){
+    public static Map<String, SString> getMapSString() {
         return mapSString;
     }
 }

@@ -25,7 +25,7 @@ public class SIntegerFactory {
     /**
      * Returns the HashMap where each distinct Scrabble Integer is stored
      */
-    public Map<Integer, SInteger> getMap() {
+    public static Map<Integer, SInteger> getMapSInteger() {
         return mapSInteger;
     }
 }

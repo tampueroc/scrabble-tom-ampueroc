@@ -23,9 +23,9 @@ public class SBinaryFactory {
         return result;
     }
     /**
-     * Returns the HashMap where each distinct Scrabble Binary object is stored
+     * Returns the HashMap where each distinct Scrabble Binary is stored
      */
-    public Map<String, SBinary> getMap(){
+    public static Map<String, SBinary> getMapSBinary() {
         return mapSBinary;
     }
 }

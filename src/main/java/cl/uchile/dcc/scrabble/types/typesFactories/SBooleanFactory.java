@@ -23,7 +23,9 @@ public class SBooleanFactory {
         }
         return result;
     }
-
+    /**
+     * Returns the HashMap where each distinct Scrabble Boolean is stored
+     */
     public static Map<Boolean, SBoolean> getMapSBoolean() {
         return mapSBoolean;
     }
