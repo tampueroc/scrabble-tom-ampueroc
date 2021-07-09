@@ -39,7 +39,7 @@ class asIntegerTest {
         INodes AST_1_Bin = new asInteger(AST_1);
         ITypes actual = AST_1_Bin.operate();
         double expectedValue = (SInt_1.getValue()+ SInt_2.getValue()) + (SInt_1.getValue() + SFlt_1.getValue());
-        SInteger expected = SFloatFactory.createSFloat(expectedValue).asInteger();
+        ITypes expected = SFloatFactory.createSFloat(expectedValue).asInteger();
         assertEquals(expected, actual);
     }
 }

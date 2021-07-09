@@ -19,7 +19,8 @@ Scrabble Integer (SInteger). All the methods were declared in the ITypes interfa
 abstract class abstractTypes from which every data type was extended from. This allowed the override of common methods
 so that every case where two data types were compatible in an operation was accounted for and correctly implemented. 
 This was possible by using Double Dispatch, as we override each method that was pertinent to the specific data type 
-class in order for it to work. We can illustrate this with the following example:
+class in order for it to work. This also allowed us to define incompatible operations so that they return a null value.
+We can illustrate this with the following example:
 
 (SFloat object).add(SInteger object) => (SFloat Object).addToFloat(SInteger Object)
 => new SFloat Object with its value computed by operating each Object value.

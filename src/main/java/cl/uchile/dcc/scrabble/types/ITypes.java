@@ -16,7 +16,7 @@ public interface ITypes extends INodes {
      * Returns a Scrabble Binary representation of this object
      *
      * @return*/
-    SBinary asBinary();
+    ITypes asBinary();
     /**
      * Returns a Scrabble Float representation of this object
      * @return

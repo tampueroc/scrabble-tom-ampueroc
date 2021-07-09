@@ -43,7 +43,7 @@ class asBinaryTest {
         INodes AST_1_Bin = new asBinary(AST_1);
         ITypes actual = AST_1_Bin.operate();
         double expectedValue = (SInt_1.getValue()+ SInt_2.getValue()) + (SInt_1.getValue() + SFlt_1.getValue());
-        SBinary expected = new SFloat(expectedValue).asBinary();
+        ITypes expected = new SFloat(expectedValue).asBinary();
         assertEquals(expected, actual);
     }
 }
