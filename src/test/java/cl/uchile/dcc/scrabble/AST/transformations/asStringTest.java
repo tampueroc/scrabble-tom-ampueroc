@@ -6,6 +6,7 @@ import cl.uchile.dcc.scrabble.types.ITypes;
 import cl.uchile.dcc.scrabble.types.SString;
 import cl.uchile.dcc.scrabble.types.numbers.SFloat;
 import cl.uchile.dcc.scrabble.types.numbers.SInteger;
+import cl.uchile.dcc.scrabble.types.typesFactories.SFloatFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
@@ -36,10 +37,10 @@ class asStringTest {
         SInteger SInt_2 = new SInteger(random_2);
 
         INodes AST_1 = new ASTadd(new ASTadd(SInt_1, SInt_2), new ASTadd(SInt_1, SFlt_1));
-        INodes AST_1_Bin = new asString(AST_1);
-        ITypes actual = AST_1_Bin.operate();
+        INodes AST_1_str = new asString(AST_1);
+        ITypes actual = AST_1_str.operate();
         double expectedValue = (SInt_1.getValue()+ SInt_2.getValue()) + (SInt_1.getValue() + SFlt_1.getValue());
-        SString expected = new SFloat(expectedValue).asString();
+        SString expected = SFloatFactory.createSFloat(expectedValue).asString();
         assertEquals(expected, actual);
     }
 }

@@ -162,8 +162,4 @@ public interface ITypes extends INodes {
      **/
     SString addToString(SString addend);
 
-    /**
-     * Operates this object to return it's Scrabble Type representation of itself
-     */
-    ITypes operate();
 }

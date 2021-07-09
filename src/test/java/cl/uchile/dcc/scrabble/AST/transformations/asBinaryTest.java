@@ -7,6 +7,8 @@ import cl.uchile.dcc.scrabble.types.SString;
 import cl.uchile.dcc.scrabble.types.numbers.SBinary;
 import cl.uchile.dcc.scrabble.types.numbers.SFloat;
 import cl.uchile.dcc.scrabble.types.numbers.SInteger;
+import cl.uchile.dcc.scrabble.types.typesFactories.SFloatFactory;
+import cl.uchile.dcc.scrabble.types.typesFactories.SIntegerFactory;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.RepeatedTest;
@@ -33,9 +35,9 @@ class asBinaryTest {
         double random_dbl = new Random().nextDouble();
         double random_dbl_1 = random_1*random_dbl;
 
-        SFloat SFlt_1 = new SFloat(random_dbl_1);
-        SInteger SInt_1 = new SInteger(random_1);
-        SInteger SInt_2 = new SInteger(random_2);
+        SFloat SFlt_1 = SFloatFactory.createSFloat(random_dbl_1);
+        SInteger SInt_1 = SIntegerFactory.createSInteger(random_1);
+        SInteger SInt_2 = SIntegerFactory.createSInteger(random_2);
 
         INodes AST_1 = new ASTadd(new ASTadd(SInt_1, SInt_2), new ASTadd(SInt_1, SFlt_1));
         INodes AST_1_Bin = new asBinary(AST_1);

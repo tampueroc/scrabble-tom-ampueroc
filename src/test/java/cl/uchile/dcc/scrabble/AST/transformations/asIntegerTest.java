@@ -5,6 +5,8 @@ import cl.uchile.dcc.scrabble.AST.operands.numerical.ASTadd;
 import cl.uchile.dcc.scrabble.types.ITypes;
 import cl.uchile.dcc.scrabble.types.numbers.SFloat;
 import cl.uchile.dcc.scrabble.types.numbers.SInteger;
+import cl.uchile.dcc.scrabble.types.typesFactories.SFloatFactory;
+import cl.uchile.dcc.scrabble.types.typesFactories.SIntegerFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -29,15 +31,15 @@ class asIntegerTest {
         double random_dbl = new Random().nextDouble();
         double random_dbl_1 = random_1*random_dbl;
 
-        SFloat SFlt_1 = new SFloat(random_dbl_1);
-        SInteger SInt_1 = new SInteger(random_1);
-        SInteger SInt_2 = new SInteger(random_2);
+        SFloat SFlt_1 = SFloatFactory.createSFloat(random_dbl_1);
+        SInteger SInt_1 = SIntegerFactory.createSInteger(random_1);
+        SInteger SInt_2 = SIntegerFactory.createSInteger(random_2);
 
         INodes AST_1 = new ASTadd(new ASTadd(SInt_1, SInt_2), new ASTadd(SInt_1, SFlt_1));
         INodes AST_1_Bin = new asInteger(AST_1);
         ITypes actual = AST_1_Bin.operate();
         double expectedValue = (SInt_1.getValue()+ SInt_2.getValue()) + (SInt_1.getValue() + SFlt_1.getValue());
-        SInteger expected = new SFloat(expectedValue).asInteger();
+        SInteger expected = SFloatFactory.createSFloat(expectedValue).asInteger();
         assertEquals(expected, actual);
     }
 }

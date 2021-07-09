@@ -4,9 +4,9 @@ import cl.uchile.dcc.scrabble.AST.INodes;
 import cl.uchile.dcc.scrabble.types.ITypes;
 import cl.uchile.dcc.scrabble.types.numbers.SFloat;
 import cl.uchile.dcc.scrabble.types.numbers.SInteger;
+import cl.uchile.dcc.scrabble.types.typesFactories.SIntegerFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.RepeatedTest;
-import org.junit.jupiter.api.Test;
 
 import java.util.Random;
 
@@ -14,11 +14,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ASTaddTest {
     private Random rng;
-    private int seed;
 
     @BeforeEach
     void setUp() {
-        seed = new Random().nextInt();
+        int seed = new Random().nextInt();
         rng = new Random(seed);
     }
 
@@ -46,8 +45,8 @@ class ASTaddTest {
         int random_1 = rng.nextInt();
         int random_2 = rng.nextInt();
 
-        SInteger SInt_1 = new SInteger(random_1);
-        SInteger SInt_2 = new SInteger(random_2);
+        SInteger SInt_1 = SIntegerFactory.createSInteger(random_1);
+        SInteger SInt_2 = SIntegerFactory.createSInteger(random_2);
 
     }
 }
