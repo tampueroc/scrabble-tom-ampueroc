@@ -38,10 +38,11 @@ class SIntegerFactoryTest {
         SInteger SInt_2 = SIntegerFactory.createSInteger(random_2);
         assert mapFSInt_1.size() == 2;
 
-        SIntegerFactory.createSInteger(random_3);
+        SInteger SInt_3 = SIntegerFactory.createSInteger(random_3);
         assert mapFSInt_1.size() == 3;
+
         SIntegerFactory.createSInteger(random_3);
-        assert mapFSInt_1.size() == 3;
+        SIntegerFactory.createSInteger(random_3);
 
         Map<Integer, SInteger> mapFSInt_2 = getMapSInteger();
 

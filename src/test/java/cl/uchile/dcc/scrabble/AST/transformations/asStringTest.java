@@ -40,7 +40,7 @@ class asStringTest {
         INodes AST_1_str = new asString(AST_1);
         ITypes actual = AST_1_str.operate();
         double expectedValue = (SInt_1.getValue()+ SInt_2.getValue()) + (SInt_1.getValue() + SFlt_1.getValue());
-        SString expected = SFloatFactory.createSFloat(expectedValue).asString();
+        SString expected = new SFloat(expectedValue).asString();
         assertEquals(expected, actual);
     }
 }

@@ -26,9 +26,9 @@ class asBooleanTest {
 
     @BeforeEach
     void setUp() {
-        STrue = SBooleanFactory.createSBoolean(T);
-        SFalse = SBooleanFactory.createSBoolean(F);
-        SInt_1 = SIntegerFactory.createSInteger(int_1);
+        STrue = new SBoolean(T);
+        SFalse = new SBoolean(F);
+        SInt_1 = new SInteger(int_1);
     }
 
     @Test
