@@ -1,6 +1,8 @@
 package cl.uchile.dcc.scrabble.AST;
 
 
+import cl.uchile.dcc.scrabble.types.ITypes;
+
 public abstract class twoNodes implements INodes{
     private INodes leftChild;
     private INodes rightChild;
