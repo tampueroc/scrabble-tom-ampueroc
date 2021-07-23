@@ -1,6 +1,8 @@
 package cl.uchile.dcc.scrabble.types;
 
 import cl.uchile.dcc.scrabble.types.numbers.SBinary;
+import cl.uchile.dcc.scrabble.types.numbers.SInteger;
+import cl.uchile.dcc.scrabble.types.typesFactories.SIntegerFactory;
 
 import java.util.Objects;
 
@@ -140,7 +142,7 @@ public class SBoolean extends abstractTypes implements ITypes, Comparable<ITypes
      * TODO
      */
     @Override
-    public int compareTo( ITypes o) {
+    public int compareTo(ITypes o) {
         return Boolean.compare(this.isValue(), o.asBoolean().isValue());
     }
 }

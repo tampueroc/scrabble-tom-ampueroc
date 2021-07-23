@@ -22,4 +22,5 @@ public class ASTequal extends twoNodes {
             return SBooleanFactory.createSBoolean(false);
         }
     }
+
 }

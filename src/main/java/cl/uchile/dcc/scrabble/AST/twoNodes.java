@@ -1,11 +1,10 @@
 package cl.uchile.dcc.scrabble.AST;
 
 
-import cl.uchile.dcc.scrabble.types.ITypes;
 
-public abstract class twoNodes implements INodes{
-    private INodes leftChild;
-    private INodes rightChild;
+public abstract class twoNodes implements INodes {
+    private final INodes leftChild;
+    private final INodes rightChild;
 
     /**
      * Creates a Node object that has two Node Type children.
@@ -21,6 +20,7 @@ public abstract class twoNodes implements INodes{
     public INodes getLeftChild() {
         return leftChild;
     }
+
     /**
      * Returns the right child Node.
      */
@@ -28,3 +28,4 @@ public abstract class twoNodes implements INodes{
         return rightChild;
     }
 }
+

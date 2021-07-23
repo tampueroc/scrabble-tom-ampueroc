@@ -1,5 +1,7 @@
 package cl.uchile.dcc.scrabble.AST;
 
+import cl.uchile.dcc.scrabble.types.ITypes;
+
 public abstract class oneNodes implements INodes{
     private INodes child;
 
@@ -17,4 +19,5 @@ public abstract class oneNodes implements INodes{
     public INodes getChild() {
         return child;
     }
+
 }

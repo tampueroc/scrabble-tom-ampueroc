@@ -1,5 +1,6 @@
 package cl.uchile.dcc.scrabble.AST;
 
+import cl.uchile.dcc.scrabble.AST.flowControl.SelectiveVisitor;
 import cl.uchile.dcc.scrabble.types.ITypes;
 
 public interface INodes {

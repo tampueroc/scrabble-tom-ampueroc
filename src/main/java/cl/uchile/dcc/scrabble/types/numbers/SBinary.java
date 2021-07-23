@@ -3,6 +3,7 @@ package cl.uchile.dcc.scrabble.types.numbers;
 import cl.uchile.dcc.scrabble.types.SBoolean;
 import cl.uchile.dcc.scrabble.types.abstractTypes;
 import cl.uchile.dcc.scrabble.types.ITypes;
+import cl.uchile.dcc.scrabble.types.typesFactories.SIntegerFactory;
 
 import java.util.Objects;
 

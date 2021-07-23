@@ -2,7 +2,7 @@ package cl.uchile.dcc.scrabble.types;
 
 import java.util.Objects;
 
-public class SString extends abstractTypes{
+public class SString extends abstractTypes implements Comparable<ITypes>{
     private final String value;
 
     /**
@@ -58,10 +58,16 @@ public class SString extends abstractTypes{
         return addend.addToString(this);
     }
 
+    @Override
+    public int compareTo(ITypes o) {
+        return String.CASE_INSENSITIVE_ORDER.compare(this.getValue(), o.asString().getValue());
+    }
+
     /**
      * Returns the Scrabble String Type object's value
      */
     public String getValue() {
         return value;
     }
+
 }

@@ -488,4 +488,9 @@ class ITypesTest {
         assertEquals(expectedResult, actualResult);
     }
 
+    @Test
+    void compareTo() {
+        int actual = SInt_0.compareTo(SInt_0);
+        assertEquals(0, actual);
+    }
 }
