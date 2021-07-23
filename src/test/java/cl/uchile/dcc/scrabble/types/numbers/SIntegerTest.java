@@ -1,5 +1,6 @@
 package cl.uchile.dcc.scrabble.types.numbers;
 
+import cl.uchile.dcc.scrabble.types.ITypes;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
@@ -57,6 +58,8 @@ class SIntegerTest {
         SBinary expectedResult = bin4;
         SBinary actualResult = I4.asBinary();
         assertEquals(expectedResult, actualResult);
+        SInteger v1=new SInteger(3);
+        SInteger v2 = new SInteger(5);
     }
 
     @Test

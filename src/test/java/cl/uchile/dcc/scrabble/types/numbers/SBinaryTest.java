@@ -115,20 +115,22 @@ class SBinaryTest {
 
     @Test
     void asInteger() {
-        SInteger expectedResult = new SInteger(i3);
-        SInteger actualResult = SBin11.asInteger();
-        assertEquals(expectedResult, actualResult);
+        SInteger expected = new SInteger(i3);
+        SInteger actual = SBin11.asInteger();
+        assertEquals(expected, actual);
 
-        SInteger expectedResult2 = new SInteger(0);
-        SInteger actualResult2 = SBin0.asInteger();
-        assertEquals(expectedResult2, actualResult2);
+        SInteger expected_2 = new SInteger(0);
+        SInteger actual_2 = SBin0.asInteger();
+        assertEquals(expected_2, actual_2);
+
+
 
         int i4 = 56699;
-        SInteger expectedResult3 = new SInteger(i4);
-        SInteger actualResult3 = SBin_3.asInteger();
-        assertEquals(expectedResult3, actualResult3);
-        System.out.println(actualResult3);
-        System.out.println(expectedResult3);
+        SInteger expected_3 = new SInteger(i4);
+        SInteger actual_3 = SBin_3.asInteger();
+        assertEquals(expected_3, actual_3);
+        System.out.println(actual_3);
+        System.out.println(expected_3);
         SBinary eq1 = new SBinary("1");
         SBinary eq2 = new SBinary("11");
         assertEquals(eq1, eq2);

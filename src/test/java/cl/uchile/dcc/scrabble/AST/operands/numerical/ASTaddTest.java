@@ -39,14 +39,4 @@ class ASTaddTest {
         assertEquals(expected, actual);
 
     }
-
-    @RepeatedTest(1) //TODO
-    void constructorTest() {
-        int random_1 = rng.nextInt();
-        int random_2 = rng.nextInt();
-
-        SInteger SInt_1 = SIntegerFactory.createSInteger(random_1);
-        SInteger SInt_2 = SIntegerFactory.createSInteger(random_2);
-
-    }
 }

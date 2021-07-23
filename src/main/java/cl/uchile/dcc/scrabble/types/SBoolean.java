@@ -4,7 +4,7 @@ import cl.uchile.dcc.scrabble.types.numbers.SBinary;
 
 import java.util.Objects;
 
-public class SBoolean extends abstractTypes implements ITypes{
+public class SBoolean extends abstractTypes implements ITypes, Comparable<ITypes>{
     private final boolean value;
 
     /**
@@ -134,5 +134,13 @@ public class SBoolean extends abstractTypes implements ITypes{
     public SBoolean negate(){
         boolean result_value = !this.isValue();
         return new SBoolean(result_value);
+    }
+
+    /**
+     * TODO
+     */
+    @Override
+    public int compareTo( ITypes o) {
+        return Boolean.compare(this.isValue(), o.asBoolean().isValue());
     }
 }

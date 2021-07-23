@@ -1,13 +1,12 @@
 package cl.uchile.dcc.scrabble.types.numbers;
 
 import cl.uchile.dcc.scrabble.types.SBoolean;
-import cl.uchile.dcc.scrabble.types.SString;
 import cl.uchile.dcc.scrabble.types.abstractTypes;
 import cl.uchile.dcc.scrabble.types.ITypes;
 
 import java.util.Objects;
 
-public class SBinary extends abstractTypes implements ITypes{
+public class SBinary extends abstractTypes implements ITypes, Comparable<ITypes>{
     private final String value;
 
     /**
@@ -481,5 +480,13 @@ public class SBinary extends abstractTypes implements ITypes{
     @Override
     public String toString() {
         return this.getValue();
+    }
+
+    /**
+     * TODO Revisar metodo
+     */
+    @Override
+    public int compareTo(ITypes o) {
+        return Integer.compare(this.asInteger().getValue(), o.asInteger().getValue());
     }
 }

@@ -7,7 +7,7 @@ import java.util.Objects;
 
 import static java.lang.Math.abs;
 
-public class SInteger extends abstractTypes implements ITypes{
+public class SInteger extends abstractTypes implements ITypes, Comparable<ITypes>{
     private final int value;
 
     /**
@@ -276,5 +276,13 @@ public class SInteger extends abstractTypes implements ITypes{
     @Override
     public String toString() {
         return String.valueOf(this.getValue());
+    }
+
+    /**
+     *  TODO
+     */
+    @Override
+    public int compareTo(ITypes o) {
+        return Integer.compare(this.getValue(), o.asInteger().getValue());
     }
 }
