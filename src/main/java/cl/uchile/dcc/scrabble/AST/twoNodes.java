@@ -1,6 +1,9 @@
 package cl.uchile.dcc.scrabble.AST;
 
 
+import cl.uchile.dcc.scrabble.fluxControl.IVisitorIf;
+import cl.uchile.dcc.scrabble.fluxControl.IVisitorWhile;
+import cl.uchile.dcc.scrabble.types.ITypes;
 
 public abstract class twoNodes implements INodes {
     private final INodes leftChild;
@@ -26,6 +29,17 @@ public abstract class twoNodes implements INodes {
      */
     public INodes getRightChild() {
         return rightChild;
+    }
+
+
+    @Override
+    public ITypes acceptIf(IVisitorIf visitor, INodes ifTrue, INodes ifFalse) {
+        return null;
+    }
+
+    @Override
+    public void acceptWhile(IVisitorWhile visitor, INodes whileTrue) {
+
     }
 }
 

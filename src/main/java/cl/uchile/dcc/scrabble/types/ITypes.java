@@ -16,7 +16,7 @@ public interface ITypes extends INodes {
      * Returns a Scrabble Binary representation of this object
      *
      * @return*/
-    ITypes asBinary();
+    SBinary asBinary();
     /**
      * Returns a Scrabble Float representation of this object
      * @return
@@ -29,7 +29,8 @@ public interface ITypes extends INodes {
     SInteger asInteger();
     /**
      * Returns a Scrabble Boolean representation of this object
-     **/
+     *
+     * @return*/
     SBoolean asBoolean();
 
     // BinaryOperands
@@ -161,8 +162,4 @@ public interface ITypes extends INodes {
      * Scrabble String
      **/
     SString addToString(SString addend);
-
-    // Comparision Operand
-    int compareTo(ITypes o);
-
 }

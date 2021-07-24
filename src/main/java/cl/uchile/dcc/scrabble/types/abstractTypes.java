@@ -1,10 +1,13 @@
 package cl.uchile.dcc.scrabble.types;
 
+import cl.uchile.dcc.scrabble.AST.INodes;
+import cl.uchile.dcc.scrabble.fluxControl.IVisitorIf;
+import cl.uchile.dcc.scrabble.fluxControl.IVisitorWhile;
 import cl.uchile.dcc.scrabble.types.numbers.SBinary;
 import cl.uchile.dcc.scrabble.types.numbers.SFloat;
 import cl.uchile.dcc.scrabble.types.numbers.SInteger;
 
-public abstract class abstractTypes implements  ITypes{
+public abstract class abstractTypes implements  ITypes, SNumber {
     /**
      * Returns the Scrabble String representation of this object
      **/
@@ -14,6 +17,7 @@ public abstract class abstractTypes implements  ITypes{
     }
     /**
      * Returns a Scrabble Binary representation of this object
+     * @return
      */
     @Override
     public SBinary asBinary() {
@@ -21,6 +25,7 @@ public abstract class abstractTypes implements  ITypes{
     }
     /**
      * Returns a Scrabble Float representation of this object
+     * @return
      */
     @Override
     public SFloat asFloat() {
@@ -29,6 +34,7 @@ public abstract class abstractTypes implements  ITypes{
 
     /**
      * Returns a Scrabble Integer representation of this object
+     * @return
      */
     @Override
     public SInteger asInteger() {
@@ -36,7 +42,8 @@ public abstract class abstractTypes implements  ITypes{
     }
     /**
      * Returns a Scrabble Boolean representation of this object
-     **/
+     * @return
+     */
     @Override
     public SBoolean asBoolean() {
         return null;
@@ -238,4 +245,14 @@ public abstract class abstractTypes implements  ITypes{
     public ITypes operate() {
         return this;
     }
+
+    @Override
+    public ITypes acceptIf(IVisitorIf visitor, INodes ifTrue, INodes ifFalse) {
+        return null;
+    }
+    @Override
+    public void acceptWhile(IVisitorWhile visitor, INodes whileTrue) {
+    }
+
+
 }

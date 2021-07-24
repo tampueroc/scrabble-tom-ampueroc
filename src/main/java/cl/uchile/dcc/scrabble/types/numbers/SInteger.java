@@ -2,13 +2,12 @@ package cl.uchile.dcc.scrabble.types.numbers;
 
 import cl.uchile.dcc.scrabble.types.abstractTypes;
 import cl.uchile.dcc.scrabble.types.ITypes;
-import cl.uchile.dcc.scrabble.types.typesFactories.SIntegerFactory;
 
 import java.util.Objects;
 
 import static java.lang.Math.abs;
 
-public class SInteger extends abstractTypes implements ITypes, Comparable<ITypes>{
+public class SInteger extends abstractTypes implements ITypes, INumber{
     private final int value;
 
     /**
@@ -173,7 +172,7 @@ public class SInteger extends abstractTypes implements ITypes, Comparable<ITypes
     }
 
     /**
-         * Returns the Scrabble Integer result of the addition of this Scrabble Integer and a given
+     * Returns the Scrabble Integer result of the addition of this Scrabble Integer and a given
      * Scrabble Type, using the addToInteger method.
      */
     @Override
@@ -207,7 +206,6 @@ public class SInteger extends abstractTypes implements ITypes, Comparable<ITypes
     public ITypes divide(ITypes dividend) {
         return dividend.divideToInteger(this);
     }
-
 
     private static String positive_intToBinary(int n){
 
@@ -279,11 +277,8 @@ public class SInteger extends abstractTypes implements ITypes, Comparable<ITypes
         return String.valueOf(this.getValue());
     }
 
-    /**
-     *  TODO
-     */
     @Override
-    public int compareTo(ITypes o) {
+    public int compareTo(INumber o) {
         return Integer.compare(this.getValue(), o.asInteger().getValue());
     }
 }

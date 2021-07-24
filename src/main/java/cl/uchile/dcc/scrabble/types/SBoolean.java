@@ -1,12 +1,10 @@
 package cl.uchile.dcc.scrabble.types;
 
 import cl.uchile.dcc.scrabble.types.numbers.SBinary;
-import cl.uchile.dcc.scrabble.types.numbers.SInteger;
-import cl.uchile.dcc.scrabble.types.typesFactories.SIntegerFactory;
 
 import java.util.Objects;
 
-public class SBoolean extends abstractTypes implements ITypes, Comparable<ITypes>{
+public class SBoolean extends abstractTypes implements ITypes, Comparable<SBoolean>{
     private final boolean value;
 
     /**
@@ -25,7 +23,7 @@ public class SBoolean extends abstractTypes implements ITypes, Comparable<ITypes
 
     /**
      * Returns an identical Scrabble Boolean representation of this object
-     **/
+     * */
     @Override
     public SBoolean asBoolean() {
         return new SBoolean(this.isValue());
@@ -138,11 +136,8 @@ public class SBoolean extends abstractTypes implements ITypes, Comparable<ITypes
         return new SBoolean(result_value);
     }
 
-    /**
-     * TODO
-     */
     @Override
-    public int compareTo(ITypes o) {
-        return Boolean.compare(this.isValue(), o.asBoolean().isValue());
+    public int compareTo(SBoolean o) {
+        return Boolean.compare(this.isValue(), o.isValue());
     }
 }

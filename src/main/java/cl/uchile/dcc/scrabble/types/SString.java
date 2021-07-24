@@ -1,8 +1,12 @@
 package cl.uchile.dcc.scrabble.types;
 
+import cl.uchile.dcc.scrabble.AST.INodes;
+import cl.uchile.dcc.scrabble.fluxControl.IVisitorIf;
+import cl.uchile.dcc.scrabble.fluxControl.IVisitorWhile;
+
 import java.util.Objects;
 
-public class SString extends abstractTypes implements Comparable<ITypes>{
+public class SString extends abstractTypes implements Comparable<SString>{
     private final String value;
 
     /**
@@ -58,10 +62,6 @@ public class SString extends abstractTypes implements Comparable<ITypes>{
         return addend.addToString(this);
     }
 
-    @Override
-    public int compareTo(ITypes o) {
-        return String.CASE_INSENSITIVE_ORDER.compare(this.getValue(), o.asString().getValue());
-    }
 
     /**
      * Returns the Scrabble String Type object's value
@@ -70,4 +70,8 @@ public class SString extends abstractTypes implements Comparable<ITypes>{
         return value;
     }
 
+    @Override
+    public int compareTo(SString o) {
+        return String.CASE_INSENSITIVE_ORDER.compare(this.toString(), o.toString());
+    }
 }
