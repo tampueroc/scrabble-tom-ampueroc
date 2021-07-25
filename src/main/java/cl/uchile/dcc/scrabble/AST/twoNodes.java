@@ -5,6 +5,14 @@ public abstract class twoNodes implements INodes{
     private INodes leftChild;
     private INodes rightChild;
 
+    public void setLeftChild(INodes leftChild) {
+        this.leftChild = leftChild;
+    }
+
+    public void setRightChild(INodes rightChild) {
+        this.rightChild = rightChild;
+    }
+
     /**
      * Creates a Node object that has two Node Type children.
      */
