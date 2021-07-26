@@ -4,6 +4,7 @@ import cl.uchile.dcc.scrabble.AST.INodes;
 import cl.uchile.dcc.scrabble.AST.twoNodes;
 import cl.uchile.dcc.scrabble.types.ITypes;
 import cl.uchile.dcc.scrabble.types.SBoolean;
+import cl.uchile.dcc.scrabble.visitor.IVisitor;
 
 public class ASTequal extends twoNodes implements ICompare{
     public ASTequal(INodes leftChild, INodes rightChild) {
@@ -16,5 +17,10 @@ public class ASTequal extends twoNodes implements ICompare{
             return new SBoolean(true);
         }
         return null;
+    }
+
+    @Override
+    public void accept(IVisitor visitor) {
+
     }
 }

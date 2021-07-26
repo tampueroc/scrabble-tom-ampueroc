@@ -17,4 +17,16 @@ public abstract class threeNodes implements INodes{
     public ITypes operate() {
         return null;
     }
+
+    public INodes getLeftChild() {
+        return leftChild;
+    }
+
+    public INodes getMiddleChild() {
+        return middleChild;
+    }
+
+    public INodes getRightChild() {
+        return rightChild;
+    }
 }

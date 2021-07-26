@@ -1,6 +1,7 @@
 package cl.uchile.dcc.scrabble.AST;
 
 import cl.uchile.dcc.scrabble.types.ITypes;
+import cl.uchile.dcc.scrabble.visitor.IVisitor;
 
 public interface INodes {
     /**
@@ -8,6 +9,6 @@ public interface INodes {
      */
     ITypes operate();
 
-    ITypes acceptIf(visitorControl visitor);
-    void acceptWhile(visitorControl visitor);
+    void accept(IVisitor visitor);
+
 }

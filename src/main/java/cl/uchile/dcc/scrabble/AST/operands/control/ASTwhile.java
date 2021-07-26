@@ -4,6 +4,7 @@ import cl.uchile.dcc.scrabble.AST.INodes;
 import cl.uchile.dcc.scrabble.AST.operands.compare.ICompare;
 import cl.uchile.dcc.scrabble.AST.twoNodes;
 import cl.uchile.dcc.scrabble.types.ITypes;
+import cl.uchile.dcc.scrabble.visitor.IVisitor;
 
 public class ASTwhile extends twoNodes {
 
@@ -17,5 +18,10 @@ public class ASTwhile extends twoNodes {
     @Override
     public ITypes operate() {
         return null;
+    }
+
+    @Override
+    public void accept(IVisitor visitor) {
+        visitor.visitWhile(this);
     }
 }
