@@ -1,6 +1,7 @@
 package cl.uchile.dcc.scrabble.types;
 
 import cl.uchile.dcc.scrabble.types.numbers.SBinary;
+import cl.uchile.dcc.scrabble.visitor.IVisitor;
 
 import java.util.Objects;
 

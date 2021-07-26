@@ -8,7 +8,4 @@ public interface INodes {
      * Operates this Node Type to return the Scrabble Type representation of itself
      */
     ITypes operate();
-
-    void accept(IVisitor visitor);
-
 }

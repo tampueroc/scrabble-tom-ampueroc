@@ -13,14 +13,9 @@ public class ASTequal extends twoNodes implements ICompare{
 
     @Override
     public ITypes operate() {
-        if (this.getLeftChild().compareTo(this.getRightChild().operate())==0){
+        if (this.getLeftChild().operate().compareTo(this.getRightChild().operate())==0){
             return new SBoolean(true);
         }
         return null;
-    }
-
-    @Override
-    public void accept(IVisitor visitor) {
-
     }
 }

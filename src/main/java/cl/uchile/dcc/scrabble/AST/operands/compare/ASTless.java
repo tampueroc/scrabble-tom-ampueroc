@@ -17,9 +17,4 @@ public class ASTless extends twoNodes implements ICompare{
         }
         return null;
     }
-
-    @Override
-    public void accept(IVisitor visitor) {
-
-    }
 }

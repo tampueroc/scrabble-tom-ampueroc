@@ -19,8 +19,4 @@ public class ASTgreater extends twoNodes implements ICompare{
         return null;
     }
 
-    @Override
-    public void accept(IVisitor visitor) {
-
-    }
 }

@@ -1,11 +1,13 @@
 package cl.uchile.dcc.scrabble.AST;
 
 import cl.uchile.dcc.scrabble.types.ITypes;
+import cl.uchile.dcc.scrabble.types.abstractTypes;
+import cl.uchile.dcc.scrabble.visitor.IVisitor;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class varNode {
+public class varNode implements INodes {
     String name;
     ITypes value;
     private static Map<String, ITypes> mapVar = new HashMap<>();
@@ -15,7 +17,13 @@ public class varNode {
         this.value=value;
     }
 
-    public ITypes create() {
+    public void modify(ITypes new_val){
+        String key = name;
+        mapVar.put(key, new_val);
+    }
+
+    @Override
+    public ITypes operate() {
         String key = name;
         ITypes result = mapVar.get(key);
         if (result==null){
@@ -24,4 +32,8 @@ public class varNode {
         return mapVar.get(name);
     }
 
+    @Override
+    public void accept(IVisitor visitor) {
+
+    }
 }

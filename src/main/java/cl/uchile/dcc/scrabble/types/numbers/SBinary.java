@@ -4,10 +4,11 @@ import cl.uchile.dcc.scrabble.types.SBoolean;
 import cl.uchile.dcc.scrabble.types.SString;
 import cl.uchile.dcc.scrabble.types.abstractTypes;
 import cl.uchile.dcc.scrabble.types.ITypes;
+import cl.uchile.dcc.scrabble.visitor.IVisitor;
 
 import java.util.Objects;
 
-public class SBinary extends abstractTypes implements ITypes{
+public class SBinary extends abstractTypes implements ITypes, INumber{
     private final String value;
 
     /**

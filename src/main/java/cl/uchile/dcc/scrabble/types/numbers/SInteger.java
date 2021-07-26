@@ -2,12 +2,13 @@ package cl.uchile.dcc.scrabble.types.numbers;
 
 import cl.uchile.dcc.scrabble.types.abstractTypes;
 import cl.uchile.dcc.scrabble.types.ITypes;
+import cl.uchile.dcc.scrabble.visitor.IVisitor;
 
 import java.util.Objects;
 
 import static java.lang.Math.abs;
 
-public class SInteger extends abstractTypes implements ITypes{
+public class SInteger extends abstractTypes implements ITypes, INumber{
     private final int value;
 
     /**
@@ -277,4 +278,5 @@ public class SInteger extends abstractTypes implements ITypes{
     public String toString() {
         return String.valueOf(this.getValue());
     }
+
 }

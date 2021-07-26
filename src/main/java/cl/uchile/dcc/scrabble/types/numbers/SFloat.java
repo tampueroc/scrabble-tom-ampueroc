@@ -2,10 +2,11 @@ package cl.uchile.dcc.scrabble.types.numbers;
 
 import cl.uchile.dcc.scrabble.types.abstractTypes;
 import cl.uchile.dcc.scrabble.types.ITypes;
+import cl.uchile.dcc.scrabble.visitor.IVisitor;
 
 import java.util.Objects;
 
-public class SFloat extends abstractTypes implements ITypes{
+public class SFloat extends abstractTypes implements ITypes, INumber{
     private final double value;
 
     /**
@@ -163,4 +164,5 @@ public class SFloat extends abstractTypes implements ITypes{
     public ITypes multiplyToInteger(SInteger product) {
         return new SFloat(product.getValue() * this.getValue());
     }
+
 }

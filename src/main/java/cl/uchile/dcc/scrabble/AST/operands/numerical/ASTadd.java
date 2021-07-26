@@ -3,6 +3,7 @@ package cl.uchile.dcc.scrabble.AST.operands.numerical;
 import cl.uchile.dcc.scrabble.AST.twoNodes;
 import cl.uchile.dcc.scrabble.AST.INodes;
 import cl.uchile.dcc.scrabble.types.ITypes;
+import cl.uchile.dcc.scrabble.visitor.IVisitor;
 
 public class ASTadd extends twoNodes {
     /**
@@ -16,6 +17,7 @@ public class ASTadd extends twoNodes {
      */
     @Override
     public ITypes operate() {
-        return this.getLeftChild().operate().add(this.getRightChild().operate());
+        ITypes result = this.getLeftChild().operate().add(this.getRightChild().operate());
+        return result;
     }
 }
