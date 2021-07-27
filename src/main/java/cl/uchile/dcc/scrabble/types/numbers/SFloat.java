@@ -165,4 +165,8 @@ public class SFloat extends abstractTypes implements ITypes, INumber{
         return new SFloat(product.getValue() * this.getValue());
     }
 
+    @Override
+    public int compareTo(ITypes o) {
+        return 0;
+    }
 }

@@ -5,23 +5,35 @@ import cl.uchile.dcc.scrabble.AST.operands.compare.ICompare;
 import cl.uchile.dcc.scrabble.AST.twoNodes;
 import cl.uchile.dcc.scrabble.types.ITypes;
 import cl.uchile.dcc.scrabble.visitor.IVisitor;
+import cl.uchile.dcc.scrabble.visitor.visitorWhile;
 
-public class ASTwhile extends twoNodes implements IControl{
+public class ASTwhile implements IControl, INodes{
+    ICompare cond;
+    INodes whileTrue;
 
-    /**
-     * Creates a Node object that has two Node Type children.
-     */
     public ASTwhile(ICompare cond, INodes whileTrue) {
-        super(cond, whileTrue);
+        this.cond = cond;
+        this.whileTrue = whileTrue;
     }
+
 
     @Override
     public ITypes operate() {
-        return null;
+        visitorWhile poto = new visitorWhile();
+        return accept(poto);
     }
 
     @Override
-    public void accept(IVisitor visitor) {
+    public ITypes accept(IVisitor visitor) {
         visitor.visitWhile(this);
+        return null;
+    }
+
+    public ICompare getCond() {
+        return cond;
+    }
+
+    public INodes getWhileTrue() {
+        return whileTrue;
     }
 }

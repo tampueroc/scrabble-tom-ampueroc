@@ -136,4 +136,9 @@ public class SBoolean extends abstractTypes implements ITypes{
         boolean result_value = !this.isValue();
         return new SBoolean(result_value);
     }
+
+    @Override
+    public int compareTo(ITypes o) {
+        return 0;
+    }
 }

@@ -476,6 +476,12 @@ public class SBinary extends abstractTypes implements ITypes, INumber{
         }
         return false;
     }
+
+    @Override
+    public int compareTo(ITypes o) {
+        return 0;
+    }
+
     /**
      * Returns this Scrabble Binary String value.
      */

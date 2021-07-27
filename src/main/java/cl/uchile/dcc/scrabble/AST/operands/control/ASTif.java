@@ -17,8 +17,9 @@ public class ASTif extends threeNodes implements IControl {
     }
 
     @Override
-    public void accept(IVisitor visitor) {
+    public ITypes accept(IVisitor visitor) {
         visitor.visitIf(this);
+        return null;
     }
 
 }

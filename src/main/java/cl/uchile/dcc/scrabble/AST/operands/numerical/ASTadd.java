@@ -2,14 +2,17 @@ package cl.uchile.dcc.scrabble.AST.operands.numerical;
 
 import cl.uchile.dcc.scrabble.AST.twoNodes;
 import cl.uchile.dcc.scrabble.AST.INodes;
+import cl.uchile.dcc.scrabble.AST.varNode;
 import cl.uchile.dcc.scrabble.types.ITypes;
 import cl.uchile.dcc.scrabble.visitor.IVisitor;
+
+import java.util.Map;
 
 public class ASTadd extends twoNodes {
     /**
      * Creates an Operand Add Node that establishes the addition operation between it's left and right children.
      */
-    public ASTadd(INodes leftChild, INodes rightChild) {
+    public ASTadd(String leftChild, String rightChild) {
         super(leftChild, rightChild);
     }
     /**
@@ -17,7 +20,10 @@ public class ASTadd extends twoNodes {
      */
     @Override
     public ITypes operate() {
-        ITypes result = this.getLeftChild().operate().add(this.getRightChild().operate());
+        varNode owo = new varNode();
+        Map<String, ITypes> map = owo.getMapVar();
+        ITypes result = map.get(this.getLeftChild()).add(map.get(this.getRightChild()));
+        map.put(this.getLeftChild(), result);
         return result;
     }
 }
