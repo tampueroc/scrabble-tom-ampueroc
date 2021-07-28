@@ -1,6 +1,8 @@
 package cl.uchile.dcc.scrabble.AST.operands.comparators;
 
-public abstract class abstractComparator implements ICompare{
+import cl.uchile.dcc.scrabble.AST.INodes;
+
+public abstract class abstractComparator implements INodes {
     public String leftVarName;
     public String rightVarName;
 
