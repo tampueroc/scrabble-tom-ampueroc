@@ -25,8 +25,7 @@ public class visitorWhile implements IVisitor{
     public void visitWhile(ASTwhile control) {
         ICompare cond = control.getCond();
         INodes whileTrue = control.getWhileTrue();
-        while(cond.operate().asBoolean().isValue()){
-            System.out.println(map.get("b"));
+        while(cond.operate().equals(STrue)){
             whileTrue.operate();
         }
     }

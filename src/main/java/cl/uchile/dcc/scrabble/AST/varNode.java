@@ -8,17 +8,23 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class varNode implements INodes {
+    String varName;
+    ITypes varValue;
     private static Map<String, ITypes> mapVar = new HashMap<>();
 
     public static Map<String, ITypes> getMapVar() {
         return mapVar;
     }
-    public void use(String name, ITypes value){
-        String key = name;
-        mapVar.put(key, value);
+
+    public void use(String varName, ITypes varValue){
+        String key = varName;
+        mapVar.put(key, varValue);
     }
+
     @Override
     public ITypes operate() {
+        String key = varName;
+        mapVar.put(key, varValue);
         return null;
     }
 }
