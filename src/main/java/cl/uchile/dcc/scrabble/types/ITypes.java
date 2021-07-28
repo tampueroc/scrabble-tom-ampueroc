@@ -162,4 +162,5 @@ public interface ITypes extends INodes {
      **/
     SString addToString(SString addend);
 
+    int compare(ITypes iTypes);
 }

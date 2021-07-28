@@ -58,6 +58,11 @@ public class SString extends abstractTypes{
         return addend.addToString(this);
     }
 
+    @Override //TODO
+    public int compare(ITypes iTypes) {
+        return 0;
+    }
+
     /**
      * Returns the Scrabble String Type object's value
      */

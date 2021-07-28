@@ -395,6 +395,11 @@ public class SBinary extends abstractTypes implements ITypes{
         return dividend.divideToBinary(this);
     }
 
+    @Override //TODO
+    public int compare(ITypes iTypes) {
+        return 0;
+    }
+
     private int negativeBinaryToInt(String binary){
         int n = binary.length() - 1;
         int w = -bitToInt(binary.charAt(0)) * (int) Math.pow(2, n);

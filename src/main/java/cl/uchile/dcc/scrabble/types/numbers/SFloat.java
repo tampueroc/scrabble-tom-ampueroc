@@ -155,6 +155,11 @@ public class SFloat extends abstractTypes implements ITypes{
         return dividend.divideToFloat(this);
     }
 
+    @Override //TODO
+    public int compare(ITypes iTypes) {
+        return 0;
+    }
+
     /**
      * Returns the Scrabble Float result of the multiplication of this Scrabble Float object
      * and a given Scrabble Integer.

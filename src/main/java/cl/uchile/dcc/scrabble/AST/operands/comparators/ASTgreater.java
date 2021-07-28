@@ -17,7 +17,7 @@ public class ASTgreater extends abstractComparator implements INodes {
     @Override
     public ITypes operate() {
         Map<String, ITypes> map = getMapVar();
-        if (map.get(leftVarName).compareTo(map.get(rightVarName))>0 ){
+        if (map.get(leftVarName).compare(map.get(rightVarName))>0 ){
             return new SBoolean(true);
         }
         return new SBoolean(false);
