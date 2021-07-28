@@ -2,6 +2,7 @@ package cl.uchile.dcc.scrabble.types.numbers;
 
 import cl.uchile.dcc.scrabble.types.abstractTypes;
 import cl.uchile.dcc.scrabble.types.ITypes;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
@@ -280,4 +281,5 @@ public class SInteger extends abstractTypes implements ITypes, INumber, Comparab
     public int compareTo( ITypes o) {
         return Integer.compare(this.getValue(), o.asInteger().getValue());
     }
+
 }
