@@ -9,9 +9,9 @@ import static cl.uchile.dcc.scrabble.AST.varNode.getMapVar;
 
 public class addTo implements INodes{
     String varName;
-    ITypes addend;
+    String addend;
     Map<String, ITypes> map = getMapVar();
-    public addTo(String varName, ITypes addend) {
+    public addTo(String varName, String  addend) {
         this.varName = varName;
         this.addend = addend;
     }
@@ -19,7 +19,8 @@ public class addTo implements INodes{
     @Override
     public ITypes operate() {
         ITypes a = map.get(varName);
-        ITypes result = a.add(addend);
+        ITypes b = map.get(addend);
+        ITypes result = a.add(b);
         map.put(varName, result);
         return null;
     }

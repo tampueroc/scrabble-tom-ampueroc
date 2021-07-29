@@ -9,9 +9,9 @@ import static cl.uchile.dcc.scrabble.AST.varNode.getMapVar;
 
 public class multiplyTo implements INodes {
     String varName;
-    ITypes product;
+    String product;
     Map<String, ITypes> map = getMapVar();
-    public multiplyTo(String varName, ITypes product) {
+    public multiplyTo(String varName, String product) {
         this.varName = varName;
         this.product = product;
     }
@@ -19,7 +19,8 @@ public class multiplyTo implements INodes {
     @Override
     public ITypes operate() {
         ITypes a = map.get(varName);
-        ITypes result = a.multiply(product);
+        ITypes b = map.get(product);
+        ITypes result = a.multiply(b);
         map.put(varName, result);
         return null;
     }
