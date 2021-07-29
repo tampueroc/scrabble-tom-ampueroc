@@ -8,6 +8,7 @@ import cl.uchile.dcc.scrabble.types.SBoolean;
 
 public class visitorWhile implements IVisitor{
     SBoolean STrue = new SBoolean(true);
+
     @Override
     public ITypes visitIf(ASTif control) {
         return null;
