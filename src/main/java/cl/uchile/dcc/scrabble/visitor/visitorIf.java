@@ -9,6 +9,12 @@ import cl.uchile.dcc.scrabble.types.SBoolean;
 public class visitorIf implements IVisitor{
     SBoolean STrue = new SBoolean(true);
     SBoolean SFalse = new SBoolean(false);
+
+    /**
+     * Evaluates either the true cause or false cause based on the truth value of the condition.
+     * @param control
+     * @return
+     */
     @Override
     public ITypes visitIf(ASTif control) {
         INodes cond = control.getCond();
