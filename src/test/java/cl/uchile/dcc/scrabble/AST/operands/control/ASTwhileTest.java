@@ -1,6 +1,6 @@
 package cl.uchile.dcc.scrabble.AST.operands.control;
 
-import cl.uchile.dcc.scrabble.AST.operands.comparators.ASTgreater;
+import cl.uchile.dcc.scrabble.AST.operands.varComparator.ASTgreater;
 import cl.uchile.dcc.scrabble.AST.operands.varNumericalOperand.addTo;
 import cl.uchile.dcc.scrabble.AST.varNode;
 import cl.uchile.dcc.scrabble.types.ITypes;
@@ -10,7 +10,6 @@ import org.junit.jupiter.api.Test;
 import java.util.Map;
 
 import static cl.uchile.dcc.scrabble.AST.varNode.getMapVar;
-import static org.junit.jupiter.api.Assertions.*;
 
 class ASTwhileTest {
 

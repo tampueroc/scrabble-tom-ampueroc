@@ -1,4 +1,4 @@
-package cl.uchile.dcc.scrabble.AST.operands.comparators;
+package cl.uchile.dcc.scrabble.AST.operands.varComparator;
 
 import cl.uchile.dcc.scrabble.AST.INodes;
 
