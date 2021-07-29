@@ -7,19 +7,20 @@ import java.util.Map;
 
 import static cl.uchile.dcc.scrabble.AST.varNode.getMapVar;
 
-public class addTo implements INodes{
+public class divideTo implements INodes {
     String varName;
-    ITypes addend;
+    ITypes dividend;
     Map<String, ITypes> map = getMapVar();
-    public addTo(String varName, ITypes addend) {
+
+    public divideTo(String varName, ITypes subtrahend) {
         this.varName = varName;
-        this.addend = addend;
+        this.dividend = subtrahend;
     }
 
     @Override
     public ITypes operate() {
         ITypes a = map.get(varName);
-        ITypes result = a.add(addend);
+        ITypes result = a.divide(dividend);
         map.put(varName, result);
         return null;
     }
