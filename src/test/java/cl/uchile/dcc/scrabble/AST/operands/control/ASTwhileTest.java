@@ -44,7 +44,7 @@ class ASTwhileTest {
         ASTif whileTrue = new ASTif(cond_2, ifTrue, ifFalse);
         ASTwhile w1 = new ASTwhile(cond_1, whileTrue);
         w1.operate();
-        
+
         System.out.println("EL MCD ES: " + map.get("a"));
     }
 }
