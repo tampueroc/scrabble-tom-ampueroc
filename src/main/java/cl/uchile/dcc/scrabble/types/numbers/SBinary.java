@@ -7,7 +7,7 @@ import cl.uchile.dcc.scrabble.types.ITypes;
 
 import java.util.Objects;
 
-public class SBinary extends abstractTypes implements ITypes{
+public class SBinary extends abstractTypes implements ITypes, Comparable<ITypes>{
     private final String value;
 
     /**
@@ -395,6 +395,7 @@ public class SBinary extends abstractTypes implements ITypes{
         return dividend.divideToBinary(this);
     }
 
+
     private int negativeBinaryToInt(String binary){
         int n = binary.length() - 1;
         int w = -bitToInt(binary.charAt(0)) * (int) Math.pow(2, n);
@@ -481,5 +482,15 @@ public class SBinary extends abstractTypes implements ITypes{
     @Override
     public String toString() {
         return this.getValue();
+    }
+
+    @Override
+    public int compareTo(ITypes o) {
+        return Double.compare(this.asFloat().getValue(), o.asFloat().getValue());
+    }
+
+    @Override
+    public int compare(ITypes o) {
+        return this.compareTo(o);
     }
 }
