@@ -57,3 +57,23 @@ This way we use all the previous implementations. Note that the Logical Operatio
 oneNode abstract class, which means that it's operate() method works similarly to all the transformation nodes.
 
 The testing was done for each Factory Type and Node Operand, taking into account their different constructors and methods.
+
+The last part consisted on implementing flow control operations. For this it was needed a rudimentary operation which 
+allowed the comparison between two numerical Scrabble Type values. This was archived by implementing the native java
+Comparable and a simple double dispatch, so it only operates between Numerical Scrabble Type values. Then this 
+comparison operation was added to the AST composite implementation. The next step was creating the necessary classes for 
+both the if and while operations in the tree. In order to improve the code extensibility the Visitor design pattern was used,
+allowing the easy implementation of new behaviours to the composite structure, with minimal changes to it. The operation of both
+flow control operands was finally implemented in the visitor, allowing a specific behavior to be implemented on a specific 
+object (if necessary it can also be generalized to different structures in the tree).
+
+The visitor for the While operation used the given Scrabble While Operand and used its given attributes of both condition and
+operation to operate the structure indirectly. This same mechanism was used in the if control operand.
+
+It's important to also take note of the implementation of the variables, by using a hash map association a given variable 
+name (String) and a given Scrabble Type Object. This was used in order to make dynamic changes to values for the flow control
+operands, using specific operations that only works with variables (by reading the variable name in the static hash map, and working
+with it's associated value) such as classic numerical operation that updates the first variable in the input and also condition
+that were based on comparison nodes that only worked with variables.
+
+Finally this was tested thoroughly with random generated variables and a complex algorithm that involved both if and while operations.

@@ -8,11 +8,6 @@ import java.util.Map;
 import static cl.uchile.dcc.scrabble.AST.varNode.getMapVar;
 
 public class ASTequal extends abstractComparator{
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
-    }
-
     /**
      * Creates a comparator node operand that works between two variables.
      * @param leftVarName

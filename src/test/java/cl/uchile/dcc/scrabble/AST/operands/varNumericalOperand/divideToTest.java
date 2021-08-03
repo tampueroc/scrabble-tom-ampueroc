@@ -1,8 +1,7 @@
-package cl.uchile.dcc.scrabble.AST.operands.varComparator;
+package cl.uchile.dcc.scrabble.AST.operands.varNumericalOperand;
 
 import cl.uchile.dcc.scrabble.AST.varNode;
 import cl.uchile.dcc.scrabble.types.ITypes;
-import cl.uchile.dcc.scrabble.types.SBoolean;
 import cl.uchile.dcc.scrabble.types.numbers.SFloat;
 import cl.uchile.dcc.scrabble.types.numbers.SInteger;
 import org.junit.jupiter.api.BeforeEach;
@@ -13,15 +12,13 @@ import java.util.Map;
 import java.util.Random;
 
 import static cl.uchile.dcc.scrabble.AST.varNode.getMapVar;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
-class ASTequalTest {
-
+class divideToTest {
     private Random rng;
 
     @RepeatedTest(100)
     void operate() {
-        ITypes expected = new SBoolean(false);
         Map<String, ITypes> map = getMapVar();
         int random_1 = rng.nextInt();
         double random_dbl = new Random().nextDouble();
@@ -35,13 +32,11 @@ class ASTequalTest {
         a.operate();
         b.operate();
 
-        ASTequal cond = new ASTequal("a", "b");
-        ITypes actual = cond.operate();
-        int expectedValue_1 = SFlt_1.compare(SInt_1);
-        if (expectedValue_1==0){
-            expected=new SBoolean(true);
-        }
-        assertEquals(expected, actual);
+        divideTo add_1 = new divideTo("a", "b");
+        double expectedValue_1 = SFlt_1.divide(SInt_1).operate().asFloat().getValue();
+        SFloat expected_1 = new SFloat(expectedValue_1);
+        add_1.operate();
+        assertEquals(expected_1, map.get("a"));
     }
 
     @BeforeEach
@@ -49,5 +44,4 @@ class ASTequalTest {
         int seed = new Random().nextInt();
         rng = new Random(seed);
     }
-
 }

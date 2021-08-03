@@ -9,10 +9,17 @@ public class ASTwhile implements IControl, INodes {
     INodes cond;
     INodes whileTrue;
 
+    /**
+     * Returns this WHILE Node Operand CONDITION.
+     * @return
+     */
     public INodes getCond() {
         return cond;
     }
-
+    /**
+     * Returns this WHILE Node Operand operation that executes if the given condition is true.
+     * @return
+     */
     public INodes getWhileTrue() {
         return whileTrue;
     }

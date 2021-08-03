@@ -8,7 +8,7 @@ import java.util.Map;
 
 import static cl.uchile.dcc.scrabble.AST.varNode.getMapVar;
 
-public class ASTgreater extends abstractComparator implements INodes {
+public class ASTgreater extends abstractComparator {
     /**
      * Creates a comparator node operand that works between two variables.
      * @param leftVarName
