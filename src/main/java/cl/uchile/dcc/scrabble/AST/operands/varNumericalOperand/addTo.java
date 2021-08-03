@@ -11,11 +11,20 @@ public class addTo implements INodes{
     String varName;
     String addend;
     Map<String, ITypes> map = getMapVar();
+    /**
+     * Creates an addition node operand that works between two variables.
+     * @param varName
+     * @param addend
+     */
     public addTo(String varName, String  addend) {
         this.varName = varName;
         this.addend = addend;
     }
-
+    /**
+     * Operates the node indexing the result by updating the variable corresponding to the varName in the hash
+     * map with the result of the operation between both variables.
+     * @return
+     */
     @Override
     public ITypes operate() {
         ITypes a = map.get(varName);

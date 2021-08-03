@@ -14,6 +14,7 @@ import org.junit.jupiter.api.Test;
 import java.util.Map;
 
 import static cl.uchile.dcc.scrabble.AST.varNode.getMapVar;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ASTwhileTest {
 
@@ -46,5 +47,6 @@ class ASTwhileTest {
         w1.operate();
 
         System.out.println("EL MCD ES: " + map.get("a"));
+
     }
 }

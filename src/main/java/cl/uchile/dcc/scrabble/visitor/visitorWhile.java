@@ -17,7 +17,11 @@ public class visitorWhile implements IVisitor{
     public ITypes visitIf(ASTif control) {
         return null;
     }
-
+    /**
+     * Operates the While Node operation if the associated condition is true
+     * @param control
+     * @return
+     */
     @Override
     public void visitWhile(ASTwhile control) {
         INodes cond = control.getCond();

@@ -11,11 +11,20 @@ public class multiplyTo implements INodes {
     String varName;
     String product;
     Map<String, ITypes> map = getMapVar();
+    /**
+     * Creates a multiplication node operand that works between two variables.
+     * @param varName
+     * @param addend
+     */
     public multiplyTo(String varName, String product) {
         this.varName = varName;
         this.product = product;
     }
-
+    /**
+     * Operates the node indexing the result by updating the variable corresponding to the varName in the hash
+     * map with the result of the operation between both variables.
+     * @return
+     */
     @Override
     public ITypes operate() {
         ITypes a = map.get(varName);

@@ -11,11 +11,20 @@ public class subtractTo implements INodes {
     String varName;
     String subtrahend;
     Map<String, ITypes> map = getMapVar();
+    /**
+     * Creates a subtraction node operand that works between two variables.
+     * @param varName
+     * @param addend
+     */
     public subtractTo(String varName, String subtrahend) {
         this.varName = varName;
         this.subtrahend = subtrahend;
     }
-
+    /**
+     * Operates the node indexing the result by updating the variable corresponding to the varName in the hash
+     * map with the result of the operation between both variables.
+     * @return
+     */
     @Override
     public ITypes operate() {
         ITypes a = map.get(varName);

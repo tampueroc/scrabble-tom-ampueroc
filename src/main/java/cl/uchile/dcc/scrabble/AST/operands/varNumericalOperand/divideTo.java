@@ -11,12 +11,20 @@ public class divideTo implements INodes {
     String varName;
     String dividend;
     Map<String, ITypes> map = getMapVar();
-
+    /**
+     * Creates a division node operand that works between two variables.
+     * @param varName
+     * @param addend
+     */
     public divideTo(String varName, String subtrahend) {
         this.varName = varName;
         this.dividend = subtrahend;
     }
-
+    /**
+     * Operates the node indexing the result by updating the variable corresponding to the varName in the hash
+     * map with the result of the operation between both variables.
+     * @return
+     */
     @Override
     public ITypes operate() {
         ITypes a = map.get(varName);
