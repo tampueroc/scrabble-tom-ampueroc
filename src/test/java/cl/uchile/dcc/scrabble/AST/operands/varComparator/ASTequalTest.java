@@ -3,55 +3,51 @@ package cl.uchile.dcc.scrabble.AST.operands.varComparator;
 import cl.uchile.dcc.scrabble.AST.varNode;
 import cl.uchile.dcc.scrabble.types.ITypes;
 import cl.uchile.dcc.scrabble.types.SBoolean;
+import cl.uchile.dcc.scrabble.types.numbers.SFloat;
 import cl.uchile.dcc.scrabble.types.numbers.SInteger;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
+import java.util.Map;
+import java.util.Random;
+
+import static cl.uchile.dcc.scrabble.AST.varNode.getMapVar;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ASTequalTest {
 
-    @BeforeEach
-    void setUp() {
-    }
+    private Random rng;
 
-    @Test
+    @RepeatedTest(100)
     void operate() {
-        SBoolean SFalse = new SBoolean(false);
-        SBoolean STrue = new SBoolean(true);
-        SInteger SInt_0 = new SInteger(0);
-        SInteger SInt_1 = new SInteger(10);
-        SInteger SInt_2 = new SInteger(0);
-        SInteger SInt_3 = new SInteger(-10);
+        ITypes expected = new SBoolean(false);
+        Map<String, ITypes> map = getMapVar();
+        int random_1 = rng.nextInt();
+        double random_dbl = new Random().nextDouble();
+        double random_dbl_1 = random_1*random_dbl;
 
-        varNode a = new varNode("a", SInt_0);
+        SFloat SFlt_1 = new SFloat(random_dbl_1);
+        SInteger SInt_1 = new SInteger(random_1);
+
+        varNode a = new varNode("a", SFlt_1);
         varNode b = new varNode("b", SInt_1);
-        varNode c = new varNode("c", SInt_2);
-        varNode d = new varNode("d", SInt_3);
-
         a.operate();
         b.operate();
-        c.operate();
-        d.operate();
 
-        ASTequal cond_0 = new ASTequal("a", "b");
-        ASTequal cond_1 = new ASTequal("b", "a");
-        ASTequal cond_2 = new ASTequal("b", "b");
-        ASTequal cond_3 = new ASTequal("c", "d");
-        ASTequal cond_4 = new ASTequal("d", "a");
+        ASTequal cond = new ASTequal("a", "b");
+        ITypes actual = cond.operate();
+        int expectedValue_1 = SFlt_1.compare(SInt_1);
+        if (expectedValue_1==0){
+            expected=new SBoolean(true);
+        }
+        assertEquals(expected, actual);
+    }
 
-        ITypes cond_0_actual = cond_0.operate();
-        ITypes cond_1_actual = cond_1.operate();
-        ITypes cond_2_actual = cond_2.operate();
-        ITypes cond_3_actual = cond_3.operate();
-        ITypes cond_4_actual = cond_4.operate();
-
-        assertEquals(cond_0_actual, SFalse);
-        assertEquals(cond_1_actual, SFalse);
-        assertEquals(cond_2_actual, STrue);
-        assertEquals(cond_3_actual, SFalse);
-        assertEquals(cond_4_actual, SFalse);
-
+    @BeforeEach
+    void setUp() {
+        int seed = new Random().nextInt();
+        rng = new Random(seed);
     }
 
 }
