@@ -5,7 +5,7 @@ import cl.uchile.dcc.scrabble.types.ITypes;
 
 import java.util.Objects;
 
-public class SFloat extends abstractTypes implements ITypes{
+public class SFloat extends abstractTypes implements ITypes, Comparable<ITypes>{
     private final double value;
 
     /**
@@ -155,9 +155,14 @@ public class SFloat extends abstractTypes implements ITypes{
         return dividend.divideToFloat(this);
     }
 
-    @Override //TODO
-    public int compare(ITypes iTypes) {
-        return 0;
+    @Override
+    public int compareTo(ITypes o) {
+        return Double.compare(this.getValue(), o.asFloat().getValue());
+    }
+
+    @Override
+    public int compare(ITypes o) {
+        return this.compareTo(o);
     }
 
     /**
